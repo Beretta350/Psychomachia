@@ -9,6 +9,26 @@
 position = Vector2( 180.239, 270.036 )
 scale = Vector2( 2.53223, 1.9038 )
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
-position = Vector2( 178.27, 334.677 )
+position = Vector2( 32, 328 )
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 240, 328 )
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 360, 232 )
+rotation = -1.57079
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 464, 144 )
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 520, 480 )
 scale = Vector2( 2.46339, 3.13786 )

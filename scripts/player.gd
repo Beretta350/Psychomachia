@@ -4,12 +4,19 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var movingright
-var jumping
-var velocity = Vector2()
-var walkspeed=350
-var gravity=200
-var jumpforce=150
+const UP = Vector2(0, -1)
+const GRAVITY = 20
+const MAXFALLSPEED = 200
+const MAXSPEED = 500
+const JUMPFORCE = 500
+const ACCEL = 40
+
+var motion = Vector2()
+var movingright = true
+var jumping = false
+var num_jumps = 2
+
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,18 +27,30 @@ func _ready():
 func get_input():
 	if Input.is_action_pressed("ui_right"):
 		movingright=true
-		$AnimatedSprite.play("walk")
-		velocity.x = walkspeed
+		if is_on_floor():
+			$AnimatedSprite.play("walk")
+		motion.x += ACCEL
 	elif Input.is_action_pressed("ui_left"):
 		movingright=false
-		$AnimatedSprite.play("walk")
-		velocity.x = -walkspeed
-	elif Input.is_action_pressed("ui_jump"):
-		velocity.y = -jumpforce
-		$AnimatedSprite.play("jump")			
+		if is_on_floor():
+			$AnimatedSprite.play("walk")
+		motion.x -= ACCEL
 	else:
-		$AnimatedSprite.play("idle")
-		velocity.x=0
+		if is_on_floor():
+			$AnimatedSprite.play("idle")
+		motion.x=lerp(motion.x, 0, 0.2)
+	motion.x = clamp(motion.x, -MAXSPEED, MAXSPEED)
+		
+		
+	if Input.is_action_just_pressed("ui_jump") and (is_on_floor() or is_on_wall()):
+		motion.y = -JUMPFORCE
+		
+		$AnimatedSprite.play("jump")
+	
+	if is_on_wall() and Input.is_action_pressed("hold"):
+		motion.y = 0
+		
+	
 		
 	if not movingright:
 		$AnimatedSprite.set_flip_h(true)
@@ -41,6 +60,8 @@ func get_input():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	velocity.y = gravity
+	motion.y += GRAVITY
+	if motion.y > MAXFALLSPEED:
+		motion.y = MAXFALLSPEED
 	get_input()
-	move_and_slide(velocity)
+	move_and_slide(motion, UP)
