@@ -9,7 +9,8 @@ var jumping
 var velocity = Vector2()
 var walkspeed=350
 var gravity=200
-var jumpforce=150
+var jumpforce=250
+var FLOOR = Vector2(0,-1)
 #var jumpheight = 500
 
 
@@ -18,15 +19,22 @@ func _ready():
 	movingright = true
 	jumping = false
 
+func _physics_process(delta):
+	velocity.y = gravity
+	get_input()
+	move_and_slide(velocity)
+
+
 func get_input():
 	if Input.is_action_pressed("ui_jump"):
-		jumping=true	
 		velocity.y = -jumpforce	
-	elif Input.is_action_pressed("ui_right"):
+		jumping=true
+	
+	if Input.is_action_pressed("ui_right"):
 		movingright=true
 		velocity.x = walkspeed
 		if jumping:
-			velocity.y = -jumpforce
+			$AnimatedSprite.play("jump")
 		else:
 			$AnimatedSprite.play("walk")			
 			
@@ -34,7 +42,6 @@ func get_input():
 		movingright=false
 		velocity.x = -walkspeed
 		if jumping:
-			velocity.y = -jumpforce
 			$AnimatedSprite.play("jump")
 		else:
 			$AnimatedSprite.play("walk")
@@ -47,10 +54,9 @@ func get_input():
 		$AnimatedSprite.set_flip_h(true)
 	else: 
 		$AnimatedSprite.set_flip_h(false)
+		
+	jumping = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	velocity.y = gravity
-	get_input()
-	move_and_slide(velocity)
+
