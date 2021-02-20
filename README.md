@@ -1,2 +1,0 @@
-# psychomachia
-Trabalho de CG
