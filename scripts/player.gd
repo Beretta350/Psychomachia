@@ -8,6 +8,7 @@ const MAXJUMPS = 1
 #const MAXSPEED = 500
 const JUMPFORCE = 500
 #const ACCEL = 0
+const movespeed = 350
 
 var motion = Vector2()
 var movingright = true
@@ -28,12 +29,12 @@ func get_input():
 		movingright=true
 		if is_on_floor():
 			$AnimatedSprite.play("walk")
-		motion.x = 350
+		motion.x = movespeed
 	elif Input.is_action_pressed("ui_left"):
 		movingright=false
 		if is_on_floor():
 			$AnimatedSprite.play("walk")
-		motion.x = -350
+		motion.x = -movespeed
 	else:
 		motion.x = 0
 		if is_on_floor():
@@ -47,9 +48,14 @@ func get_input():
 		$AnimatedSprite.play("jump")
 	
 	if is_on_wall() and Input.is_action_pressed("hold"):
-		motion.y = 0
-	
-	if is_on_floor() or is_on_wall():
+		if Input.is_action_pressed("ui_down"):
+			motion.y = movespeed
+		elif Input.is_action_pressed("ui_up"):
+			motion.y=-movespeed
+		else:
+			motion.y = 0
+		
+	if is_on_floor():
 		jumps = 0
 		
 	if not movingright:

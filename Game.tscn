@@ -34,3 +34,27 @@ scale = Vector2( 2.46339, 3.13786 )
 [node name="TileMap5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 602.408, 1078.72 )
 scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 292.958, 863.45 )
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap11" parent="." instance=ExtResource( 2 )]
+position = Vector2( -77.0361, 648.181 )
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 292.958, 1347.81 )
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150.253, 1637.97 )
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 70.2532, 1917.97 )
+scale = Vector2( 2.46339, 3.13786 )
+
+[node name="TileMap9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -33.7468, 2205.97 )
+scale = Vector2( 2.46339, 3.13786 )
