@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 const UP = Vector2(0, -1)
 const GRAVITY = 20
-const MAXFALLSPEED = 200
+const MAXFALLSPEED = 1000
 const MAXJUMPS = 1
 #const MAXSPEED = 500
 const JUMPFORCE = 500
@@ -60,7 +60,10 @@ func get_input():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	motion.y += GRAVITY
+	if is_on_floor():
+		motion.y = 0
+	else:
+		motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
 	get_input()

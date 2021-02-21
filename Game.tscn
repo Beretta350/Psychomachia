@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://plataform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/player.gd" type="Script" id=3]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 180.239, 222.946 )
 scale = Vector2( 2.53223, 1.9038 )
+script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -30,5 +32,5 @@ position = Vector2( 464, 144 )
 scale = Vector2( 2.46339, 3.13786 )
 
 [node name="TileMap5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 520, 480 )
+position = Vector2( 602.408, 1078.72 )
 scale = Vector2( 2.46339, 3.13786 )
