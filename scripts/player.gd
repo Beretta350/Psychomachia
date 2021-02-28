@@ -15,9 +15,6 @@ var movingright = true
 var jumping = false
 var jumps = 0
 
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	movingright = true
@@ -28,24 +25,24 @@ func get_input():
 	if Input.is_action_pressed("ui_right"):
 		movingright=true
 		if is_on_floor():
-			$AnimatedSprite.play("walk")
+			$Body/AnimatedSprite.play("walk")
 		motion.x = movespeed
 	elif Input.is_action_pressed("ui_left"):
 		movingright=false
 		if is_on_floor():
-			$AnimatedSprite.play("walk")
+			$Body/AnimatedSprite.play("walk")
 		motion.x = -movespeed
 	else:
 		motion.x = 0
 		if is_on_floor():
-			$AnimatedSprite.play("idle")
+			$Body/AnimatedSprite.play("idle")
 		#motion.x=lerp(motion.x, 0, 0.2)
 	#motion.x = clamp(motion.x, -MAXSPEED, MAXSPEED)
 	
 	if Input.is_action_just_pressed("ui_jump") and jumps != MAXJUMPS:
 		jumps += 1
 		motion.y = -JUMPFORCE
-		$AnimatedSprite.play("jump")
+		$Body/AnimatedSprite.play("jump")
 	
 	if is_on_wall() and Input.is_action_pressed("hold"):
 		if Input.is_action_pressed("ui_down"):
@@ -59,9 +56,9 @@ func get_input():
 		jumps = 0
 		
 	if not movingright:
-		$AnimatedSprite.set_flip_h(true)
+		$Body/AnimatedSprite.set_flip_h(true)
 	else: 
-		$AnimatedSprite.set_flip_h(false)
+		$Body/AnimatedSprite.set_flip_h(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

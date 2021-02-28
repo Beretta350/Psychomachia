@@ -9,19 +9,22 @@ extents = Vector2( 40.1575, 3.17078 )
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource( 1 )
+collision_layer = 2
+collision_mask = 2
 format = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 
 [node name="tileset" type="Sprite" parent="Sprite"]
-position = Vector2( 0.284866, 1.38499 )
-scale = Vector2( 1.03066, 1.03583 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 80, 60, 80, 20 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite/tileset"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/tileset/StaticBody2D"]
-position = Vector2( -0.971359, -3.22166 )
+position = Vector2( 0, -3.2 )
 shape = SubResource( 2 )
+one_way_collision = true
