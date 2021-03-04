@@ -30,7 +30,7 @@ var direction = Vector2(0,0)
 
 var is_on_wall : bool = false
 
-
+onready var arrow_cd_timer : Timer = $Timers/ArrowCoolDownTimer
 onready var jump_timer : Timer = $Timers/JumpTimer
 onready var floor_timer : Timer = $Timers/FloorTimer
 onready var ladder_timer : Timer = $Timers/LadderTimer
