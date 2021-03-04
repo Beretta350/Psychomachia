@@ -13,12 +13,15 @@ var vy: float = 0 setget _set_vy, _get_vy
 
 var underwater : bool = false
 var attacking : bool = false
+var h_attacking : bool = false
 var grounded : bool = false setget ,_get_grounded
 var jumping : bool = false setget ,_get_jumping
 var ladder_area : bool = false
 var ladder_tip : bool = false
 var ladder_x : float
 var jumps : int = 0
+var bow : bool = false
+var bow_equip : bool = false
 
 onready var jump_timer : Timer = $Timers/JumpTimer
 onready var floor_timer : Timer = $Timers/FloorTimer
@@ -39,6 +42,13 @@ func _physics_process(delta):
 	emit_signal("hud", "%s" % state_machine.active_state.tag)
 
 func update_inputs():
+	
+	if(Input.is_action_just_pressed("sword")):
+		bow_equip = false
+	
+	if(Input.is_action_just_pressed("bow")):
+		bow_equip = true
+	
 	horizontal = (
 		int(Input.is_action_pressed("ui_right"))
 		- int(Input.is_action_pressed("ui_left"))
@@ -53,10 +63,20 @@ func update_inputs():
 	if is_on_floor():
 		floor_timer.start()
 	
-	if Input.is_action_pressed("light_attack"):
-		attacking=true
+	
+	if(bow_equip==true):
+		if Input.is_action_pressed("light_attack"):
+			bow=true
+		else:
+			bow=false
 	else:
-		attacking=false
+		if Input.is_action_pressed("light_attack"):
+			attacking=true
+		elif Input.is_action_pressed("heavy_attack"):
+			h_attacking=true
+		else:
+			h_attacking=false
+			attacking=false
 
 func move():
 	var old = velocity

@@ -28,4 +28,6 @@ func run(player: KinematicBody2D):
 		return "jump"
 	if player.attacking:
 		return "light_atk"
+	if player.h_attacking:
+		return "heavy_atk"
 	return null
