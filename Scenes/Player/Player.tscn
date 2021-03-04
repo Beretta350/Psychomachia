@@ -169,6 +169,7 @@
 [ext_resource path="res://Sprites/Player/RedHood/dash/player_dash (2).png" type="Texture" id=167]
 [ext_resource path="res://Sprites/Player/RedHood/dash/player_dash (3).png" type="Texture" id=168]
 [ext_resource path="res://Sprites/Player/RedHood/dash/player_dash (4).png" type="Texture" id=169]
+[ext_resource path="res://Scenes/Player/StateHeal.gd" type="Script" id=158]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.0589, 16.2629 )
@@ -559,6 +560,9 @@ tag = "idle"
 [node name="Jump" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 5 )
 tag = "jump"
+
+[node name="Heal" type="Node2D" parent="PlayerStates"]
+script = ExtResource( 158 )
 
 [node name="Slide" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 157 )
