@@ -30,4 +30,6 @@ func run(player: KinematicBody2D):
 		return "light_atk"
 	if player.h_attacking:
 		return "heavy_atk"
+	if player.bow:
+		return "bow"
 	return null
