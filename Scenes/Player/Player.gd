@@ -80,7 +80,7 @@ func _get_vx():
 	return vx
 func _set_vx(val:float):
 	if val != 0:
-		sprite.flip_h = (val < 0)
+		sprite.flip_h = (val > 0)
 	velocity.x = val
 	vx = val
 
