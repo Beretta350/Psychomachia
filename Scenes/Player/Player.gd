@@ -12,6 +12,7 @@ var vx: float = 0 setget _set_vx, _get_vx
 var vy: float = 0 setget _set_vy, _get_vy
 
 var underwater : bool = false
+var attacking : bool = false
 var grounded : bool = false setget ,_get_grounded
 var jumping : bool = false setget ,_get_jumping
 var ladder_area : bool = false
@@ -51,6 +52,11 @@ func update_inputs():
 		jump_timer.start()
 	if is_on_floor():
 		floor_timer.start()
+	
+	if Input.is_action_pressed("light_attack"):
+		attacking=true
+	else:
+		attacking=false
 
 func move():
 	var old = velocity

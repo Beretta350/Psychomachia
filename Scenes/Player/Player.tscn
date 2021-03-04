@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=148 format=2]
+=======
+[gd_scene load_steps=126 format=2]
+>>>>>>> 440441c5b07c5ee2a716a001554c1b465cb45a54
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/PlayerFSM.gd" type="Script" id=2]
@@ -116,6 +120,7 @@
 [ext_resource path="res://Sprites/Player/RedHood/heavy_atk/player_heavyatk (38).png" type="Texture" id=114]
 [ext_resource path="res://Sprites/Player/RedHood/heavy_atk/player_heavyatk (39).png" type="Texture" id=115]
 [ext_resource path="res://Sprites/Player/RedHood/heavy_atk/player_heavyatk (40).png" type="Texture" id=116]
+<<<<<<< HEAD
 [ext_resource path="res://Sprites/Player/RedHood/bow/player_bow (4).png" type="Texture" id=117]
 [ext_resource path="res://Sprites/Player/RedHood/bow/player_bow (7).png" type="Texture" id=118]
 [ext_resource path="res://Sprites/Player/RedHood/bow/player_bow (6).png" type="Texture" id=119]
@@ -136,6 +141,9 @@
 [ext_resource path="res://Sprites/Player/RedHood/slide/player_slide (2).png" type="Texture" id=134]
 [ext_resource path="res://Sprites/Player/RedHood/hurt/player_hurt (5).png" type="Texture" id=135]
 [ext_resource path="res://Sprites/Player/RedHood/slide/player_slide (4).png" type="Texture" id=136]
+=======
+[ext_resource path="res://Scenes/Player/StateAttacking.gd" type="Script" id=117]
+>>>>>>> 440441c5b07c5ee2a716a001554c1b465cb45a54
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.0589, 16.2629 )
@@ -162,9 +170,9 @@ animations = [ {
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 105 ), ExtResource( 102 ), ExtResource( 94 ), ExtResource( 85 ), ExtResource( 103 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 111 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 81 ), ExtResource( 104 ), ExtResource( 112 ), ExtResource( 89 ), ExtResource( 77 ), ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 100 ), ExtResource( 92 ), ExtResource( 78 ), ExtResource( 93 ), ExtResource( 79 ), ExtResource( 106 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ) ],
+"frames": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 61 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 71 ), ExtResource( 73 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 66 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 74 ) ],
 "loop": true,
-"name": "heavy_atk",
+"name": "light_atk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 58 ), ExtResource( 42 ), ExtResource( 24 ), ExtResource( 16 ), ExtResource( 54 ), ExtResource( 37 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 32 ), ExtResource( 43 ), ExtResource( 57 ), ExtResource( 17 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 11 ), ExtResource( 23 ) ],
@@ -172,9 +180,9 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 61 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 71 ), ExtResource( 73 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 66 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 74 ) ],
+"frames": [ ExtResource( 105 ), ExtResource( 102 ), ExtResource( 94 ), ExtResource( 85 ), ExtResource( 103 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 111 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 81 ), ExtResource( 104 ), ExtResource( 112 ), ExtResource( 89 ), ExtResource( 77 ), ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 100 ), ExtResource( 92 ), ExtResource( 78 ), ExtResource( 93 ), ExtResource( 79 ), ExtResource( 106 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ) ],
 "loop": true,
-"name": "light_atk",
+"name": "heavy_atk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 128 ), ExtResource( 126 ), ExtResource( 129 ), ExtResource( 133 ), ExtResource( 135 ), ExtResource( 132 ), ExtResource( 130 ) ],
@@ -416,6 +424,9 @@ tag = "swim"
 script = ExtResource( 8 )
 tag = "walk"
 
+[node name="light_atk" type="Node2D" parent="PlayerStates"]
+script = ExtResource( 117 )
+
 [node name="Waves" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0, 15 )
 z_index = 0
@@ -435,8 +446,12 @@ frame = 3
 speed_scale = 1.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
+<<<<<<< HEAD
 anims/bow = SubResource( 9 )
 anims/heal = SubResource( 10 )
+=======
+playback_speed = 1.5
+>>>>>>> 440441c5b07c5ee2a716a001554c1b465cb45a54
 anims/heavy_atk = SubResource( 3 )
 anims/idle = SubResource( 4 )
 anims/jump = SubResource( 5 )
