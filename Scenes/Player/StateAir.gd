@@ -32,4 +32,6 @@ func run(player: KinematicBody2D):
 		return "heavy_atk"
 	if player.bow_atk:
 		return "bow_atk"
+	if player.climbing && player.is_on_wall:
+		return "climb"
 	return null

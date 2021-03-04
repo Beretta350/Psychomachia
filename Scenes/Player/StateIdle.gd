@@ -34,4 +34,6 @@ func run(player: KinematicBody2D):
 		return "slide"
 	if player.heal:
 		return "heal"
+	if player.climbing && player.is_on_wall():
+		return "climb"
 	return null

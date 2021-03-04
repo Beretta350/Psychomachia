@@ -24,6 +24,12 @@ var bow_atk : bool = false
 var bow_equip : bool = false
 var slide : bool = false
 var heal : bool = false
+var climbing : bool = false
+
+var direction = Vector2(0,0)
+
+var is_on_wall : bool = false
+
 
 onready var jump_timer : Timer = $Timers/JumpTimer
 onready var floor_timer : Timer = $Timers/FloorTimer
@@ -37,14 +43,25 @@ onready var waves : Particles2D = $Waves
 
 func _ready():
 	state_machine.init(self)
+	
 
 func _physics_process(delta):
 	update_inputs()
 	state_machine.run()
 	emit_signal("hud", "%s" % state_machine.active_state.tag)
 
+func get_wall():
+	if sprite.flip_h: 
+		direction = Vector2(1,0)
+	else:
+		direction = Vector2(-1,0)
+
+
 func update_inputs():
 	
+	get_wall()
+	is_on_wall=test_move(transform, direction)
+	print(is_on_wall)
 	if(Input.is_action_just_pressed("sword")):
 		bow_equip = false
 	
@@ -89,6 +106,12 @@ func update_inputs():
 		heal = true
 	else: 
 		heal=false
+		
+	if(Input.is_action_pressed("climb")):
+		if is_on_wall:
+			climbing=true
+	else: 
+		climbing=false
 
 func move():
 	var old = velocity
@@ -139,3 +162,7 @@ func _get_jumping():
 
 func _on_PlatformTimer_timeout():
 	collision_layer = 1 | 2
+
+
+	
+	
