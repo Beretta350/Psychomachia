@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=148 format=2]
-=======
 [gd_scene load_steps=126 format=2]
->>>>>>> 440441c5b07c5ee2a716a001554c1b465cb45a54
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/PlayerFSM.gd" type="Script" id=2]
