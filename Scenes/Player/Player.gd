@@ -20,8 +20,9 @@ var ladder_area : bool = false
 var ladder_tip : bool = false
 var ladder_x : float
 var jumps : int = 0
-var bow : bool = false
+var bow_atk : bool = false
 var bow_equip : bool = false
+var slide : bool = false
 
 onready var jump_timer : Timer = $Timers/JumpTimer
 onready var floor_timer : Timer = $Timers/FloorTimer
@@ -66,9 +67,9 @@ func update_inputs():
 	
 	if(bow_equip==true):
 		if Input.is_action_pressed("light_attack"):
-			bow=true
+			bow_atk=true
 		else:
-			bow=false
+			bow_atk=false
 	else:
 		if Input.is_action_pressed("light_attack"):
 			attacking=true
@@ -77,6 +78,11 @@ func update_inputs():
 		else:
 			h_attacking=false
 			attacking=false
+			
+	if(Input.is_action_pressed("slide")):
+		slide=true
+	else:
+		slide=false
 
 func move():
 	var old = velocity

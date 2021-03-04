@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=2]
+[gd_scene load_steps=169 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/PlayerFSM.gd" type="Script" id=2]
@@ -156,6 +156,7 @@
 [ext_resource path="res://Sprites/Player/RedHood/hurt/player_hurt (6).png" type="Texture" id=154]
 [ext_resource path="res://Scenes/Player/StateHAttacking.gd" type="Script" id=155]
 [ext_resource path="res://Scenes/Player/StateBow.gd" type="Script" id=156]
+[ext_resource path="res://Scenes/Player/StateSlide.gd" type="Script" id=157]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.0589, 16.2629 )
@@ -170,11 +171,6 @@ animations = [ {
 "frames": [ ExtResource( 122 ), ExtResource( 126 ), ExtResource( 133 ), ExtResource( 129 ), ExtResource( 128 ), ExtResource( 119 ), ExtResource( 132 ), ExtResource( 130 ), ExtResource( 127 ), ExtResource( 118 ), ExtResource( 134 ), ExtResource( 131 ), ExtResource( 135 ), ExtResource( 120 ), ExtResource( 123 ), ExtResource( 121 ), ExtResource( 124 ), ExtResource( 125 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 138 ), ExtResource( 147 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 142 ), ExtResource( 137 ), ExtResource( 148 ), ExtResource( 144 ) ],
-"loop": true,
-"name": "bow",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 105 ), ExtResource( 102 ), ExtResource( 94 ), ExtResource( 85 ), ExtResource( 103 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 111 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 81 ), ExtResource( 104 ), ExtResource( 112 ), ExtResource( 89 ), ExtResource( 77 ), ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 100 ), ExtResource( 92 ), ExtResource( 78 ), ExtResource( 93 ), ExtResource( 79 ), ExtResource( 106 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ) ],
@@ -201,11 +197,16 @@ animations = [ {
 "loop": true,
 "name": "heal",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 138 ), ExtResource( 147 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 142 ), ExtResource( 137 ), ExtResource( 148 ), ExtResource( 144 ) ],
+"loop": true,
+"name": "bow_atk",
+"speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=3]
-resource_name = "bow"
-length = 0.7
+[sub_resource type="Animation" id=12]
+resource_name = "bow_atk"
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -217,7 +218,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "bow" ]
+"values": [ "bow_atk" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:frame")
@@ -449,8 +450,7 @@ script = ExtResource( 5 )
 tag = "jump"
 
 [node name="Slide" type="Node2D" parent="PlayerStates"]
-script = ExtResource( 5 )
-tag = "jump"
+script = ExtResource( 157 )
 
 [node name="Ladder" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 6 )
@@ -466,7 +466,7 @@ tag = "walk"
 [node name="light_atk" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 117 )
 
-[node name="bow" type="Node2D" parent="PlayerStates"]
+[node name="bow_atk" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 156 )
 
 [node name="heavy_atk" type="Node2D" parent="PlayerStates"]
@@ -486,13 +486,13 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, -15 )
 frames = SubResource( 2 )
-animation = "bow"
-frame = 6
+animation = "slide"
+frame = 1
 speed_scale = 1.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
 playback_speed = 1.5
-anims/bow = SubResource( 3 )
+anims/bow_atk = SubResource( 12 )
 anims/heal = SubResource( 4 )
 anims/heavy_atk = SubResource( 5 )
 anims/idle = SubResource( 6 )
