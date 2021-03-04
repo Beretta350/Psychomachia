@@ -26,4 +26,6 @@ func run(player: KinematicBody2D):
 	if player.jumps < 1 and player.jumping:
 		player.jumps += 1
 		return "jump"
+	if player.attacking:
+		return "light_atk"
 	return null
