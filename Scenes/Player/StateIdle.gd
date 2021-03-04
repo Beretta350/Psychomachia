@@ -21,4 +21,6 @@ func run(player: KinematicBody2D):
 		return "jump"
 	if player.horizontal != 0:
 		return "walk"
+	if player.attacking:
+		return "light_atk"
 	return null
