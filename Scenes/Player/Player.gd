@@ -23,6 +23,7 @@ var jumps : int = 0
 var bow_atk : bool = false
 var bow_equip : bool = false
 var slide : bool = false
+var heal : bool = false
 
 onready var jump_timer : Timer = $Timers/JumpTimer
 onready var floor_timer : Timer = $Timers/FloorTimer
@@ -83,6 +84,11 @@ func update_inputs():
 		slide=true
 	else:
 		slide=false
+		
+	if(Input.is_action_pressed("heal")):
+		heal = true
+	else: 
+		heal=false
 
 func move():
 	var old = velocity

@@ -32,4 +32,6 @@ func run(player: KinematicBody2D):
 		return "bow_atk"
 	if player.slide:
 		return "slide"
+	if player.heal:
+		return "heal"
 	return null

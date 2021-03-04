@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=2]
+[gd_scene load_steps=170 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/PlayerFSM.gd" type="Script" id=2]
@@ -157,6 +157,7 @@
 [ext_resource path="res://Scenes/Player/StateHAttacking.gd" type="Script" id=155]
 [ext_resource path="res://Scenes/Player/StateBow.gd" type="Script" id=156]
 [ext_resource path="res://Scenes/Player/StateSlide.gd" type="Script" id=157]
+[ext_resource path="res://Scenes/Player/StateHeal.gd" type="Script" id=158]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.0589, 16.2629 )
@@ -448,6 +449,9 @@ tag = "idle"
 [node name="Jump" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 5 )
 tag = "jump"
+
+[node name="Heal" type="Node2D" parent="PlayerStates"]
+script = ExtResource( 158 )
 
 [node name="Slide" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 157 )
