@@ -24,4 +24,6 @@ func run(player: KinematicBody2D):
 		return "jump"
 	if player.horizontal == 0:
 		return "idle"
+	if player.dashing:
+		return "dash"
 	return null

@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=2]
+[gd_scene load_steps=182 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/PlayerFSM.gd" type="Script" id=2]
@@ -167,6 +167,7 @@
 [ext_resource path="res://Sprites/Player/RedHood/climb/climb_left (4).png" type="Texture" id=165]
 [ext_resource path="res://Sprites/Player/RedHood/climb/climb_left (2).png" type="Texture" id=166]
 [ext_resource path="res://Sprites/Player/RedHood/climb/climb_left (1).png" type="Texture" id=167]
+[ext_resource path="res://Scenes/Player/StateDash.gd" type="Script" id=168]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.0589, 16.2629 )
@@ -284,7 +285,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "dash"
-length = 0.5
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -305,10 +306,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3 ]
+"values": [ 0, 0, 1, 1, 2, 2, 3, 2, 2 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -539,6 +540,10 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[node name="DashTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
 [node name="PlayerStates" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
@@ -582,6 +587,9 @@ script = ExtResource( 156 )
 [node name="heavy_atk" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 155 )
 
+[node name="Dash" type="Node2D" parent="PlayerStates"]
+script = ExtResource( 168 )
+
 [node name="Waves" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0, 15 )
 z_index = 0
@@ -596,8 +604,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, -15 )
 frames = SubResource( 2 )
-animation = "heavy_atk"
-frame = 39
+animation = "dash"
 speed_scale = 1.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]

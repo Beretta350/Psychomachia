@@ -36,4 +36,8 @@ func run(player: KinematicBody2D):
 		return "heal"
 	if player.climbing:
 		return "climb"
+	if player.dashing:
+		return "dash"
+#	else:
+#		return "idle"
 	return null

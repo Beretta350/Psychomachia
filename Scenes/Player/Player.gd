@@ -9,7 +9,7 @@ var vertical : int = 0
 var up : bool = false
 var velocity: Vector2 = Vector2.ZERO
 var vx: float = 0 setget _set_vx, _get_vx
-var vy: float = 0 setget _set_vy, _get_vy
+var vy: float = 0 setget _set_vy
 
 var underwater : bool = false
 var attacking : bool = false
@@ -25,6 +25,7 @@ var bow_equip : bool = false
 var slide : bool = false
 var heal : bool = false
 var climbing : bool = false
+var dashing : bool = false
 
 var direction = Vector2(0,0)
 
@@ -32,9 +33,11 @@ var is_on_wall : bool = false
 
 onready var arrow_cd_timer : Timer = $Timers/ArrowCoolDownTimer
 onready var jump_timer : Timer = $Timers/JumpTimer
+
 onready var floor_timer : Timer = $Timers/FloorTimer
 onready var ladder_timer : Timer = $Timers/LadderTimer
 onready var platform_timer : Timer = $Timers/PlatformTimer
+onready var dash_timer : Timer = $Timers/DashTimer
 onready var sprite : AnimatedSprite = $AnimatedSprite
 onready var anim : AnimationPlayer = $AnimatedSprite/AnimationPlayer
 onready var state_machine: PlayerFSM = $PlayerStates
@@ -61,7 +64,7 @@ func update_inputs():
 	
 	get_wall()
 	is_on_wall=test_move(transform, direction)
-	print(is_on_wall)
+#	print(is_on_wall)
 	if(Input.is_action_just_pressed("sword")):
 		bow_equip = false
 	
@@ -112,6 +115,9 @@ func update_inputs():
 			climbing=true
 	else: 
 		climbing=false
+		
+	if(Input.is_action_just_pressed("dash")):
+		dashing = true
 
 func move():
 	var old = velocity
@@ -154,6 +160,10 @@ func _set_vy(val:float):
 func _get_grounded():
 	grounded = not floor_timer.is_stopped()
 	return grounded
+
+#func _get_dashing():
+#	dashing = not dash_timer.is_stopped()
+#	return dashing
 
 func _get_jumping():
 	jumping = not jump_timer.is_stopped()
