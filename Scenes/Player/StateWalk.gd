@@ -1,6 +1,6 @@
 extends BasePlayerState
 
-export var walk_speed : float = 300
+export var walk_speed : float = 200
 
 func run(player: KinematicBody2D):
 	if player.vertical > 0:
