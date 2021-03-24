@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Gluttony/main_background.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/Scenario/Gluttony/env_ground.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Scenario/Gluttony/bgrd_tree2.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Falling Platform/falling_platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Moving Platform/moving_platform.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -199,7 +200,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 tile_set = SubResource( 14 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 262263, 0, 5, 262264, 0, 7, 262265, 0, 4, 262266, 0, 2, 262267, 0, 3, 262268, 0, 1, 262269, 0, 5, 262270, 0, 4, 262271, 0, 5 )
+tile_data = PoolIntArray( 524407, 0, 0, 524408, 0, 0, 524409, 0, 0, 524410, 0, 0, 524411, 0, 0, 524412, 0, 0, 524413, 0, 0, 524414, 0, 0, 524415, 0, 0, 524416, 0, 0 )
 
 [node name="Background TM" type="TileMap" parent="."]
 z_index = -2
@@ -267,4 +268,7 @@ centered = false
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="falling_platform" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1787, 48.8245 )
+position = Vector2( 1780, 12.8245 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1869.85, 107.959 )

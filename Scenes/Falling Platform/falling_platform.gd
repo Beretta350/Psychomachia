@@ -34,10 +34,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	print("passou aqui")
 	set_physics_process(true)
 	timer.start(reset_time)
-	
-# Called when the node enters the scene tree for the first time.
 
-	
+
 func _on_ResetTimer_timeout():
 	set_physics_process(false)
 	yield(get_tree(), "physics_frame")
