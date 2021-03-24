@@ -8,7 +8,7 @@ func run(player: KinematicBody2D):
 		(player.vertical > 0 and player.ladder_tip)\
 	):
 		return "ladder"
-	if player.horizontal == 0 and player.vertical > 0:
+	if player.horizontal == 0:
 		player.collision_layer = 1
 		player.platform_timer.start()
 		player.apply_gravity(player.gravity)

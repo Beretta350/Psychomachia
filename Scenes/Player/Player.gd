@@ -122,10 +122,17 @@ func update_inputs():
 func move():
 	var old = velocity
 	velocity = move_and_slide(velocity, Vector2.UP, true)
-	if get_slide_count() > 0:
-		for i in range(get_slide_count()):
-			if(get_slide_collision(i).collider.get_name().find("Spikes") != -1):
-				get_tree().reload_current_scene()
+
+		
+	for i in range(get_slide_count()):
+		var collision = get_slide_collision(i)
+		if(get_slide_collision(i).collider.get_name().find("Spikes") != -1):
+			get_tree().reload_current_scene()
+		
+		if collision.collider.has_method("collide_with"):
+			
+			collision.collider.collide_with(collision,self)
+			
 
 
 func apply_gravity (gravity:float):
