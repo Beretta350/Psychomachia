@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "PlayerFSM",
 "language": "GDScript",
 "path": "res://Scenes/Player/PlayerFSM.gd"
+}, {
+"base": "Area2D",
+"class": "Wind",
+"language": "GDScript",
+"path": "res://Scenes/Wind/Wind.gd"
 } ]
 _global_script_class_icons={
 "BasePlayerState": "",
 "Player": "",
-"PlayerFSM": ""
+"PlayerFSM": "",
+"Wind": ""
 }
 
 [application]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=2]
+[gd_scene load_steps=183 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/PlayerFSM.gd" type="Script" id=2]
@@ -184,14 +184,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 153 ), ExtResource( 151 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 154 ), ExtResource( 152 ) ],
-"loop": true,
-"name": "heal",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 138 ), ExtResource( 147 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 142 ), ExtResource( 137 ), ExtResource( 148 ), ExtResource( 144 ) ],
 "loop": true,
 "name": "bow_atk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 153 ), ExtResource( 151 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 154 ), ExtResource( 152 ) ],
+"loop": true,
+"name": "heal",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 10 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 18 ), ExtResource( 49 ) ],
@@ -510,6 +510,9 @@ tracks/1/keys = {
 radius = 11.2816
 height = 9.43944
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 13.2154, 18.1698 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 3
 collision_mask = 0
@@ -633,4 +636,9 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 14 )
 [connection signal="timeout" from="Timers/PlatformTimer" to="." method="_on_PlatformTimer_timeout"]

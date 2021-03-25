@@ -1,6 +1,9 @@
 extends BasePlayerState
 
 func run(player: KinematicBody2D):
+	
+	player.move()
+	
 	if player.vy > 0:
 		player.vy = 0
 	if player.ladder_area and (\

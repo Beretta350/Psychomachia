@@ -8,6 +8,7 @@ var horizontal : int = 0
 var vertical : int = 0
 var up : bool = false
 var velocity: Vector2 = Vector2.ZERO
+var forces: Vector2 = Vector2.ZERO
 var vx: float = 0 setget _set_vx, _get_vx
 var vy: float = 0 setget _set_vy
 
@@ -121,6 +122,8 @@ func update_inputs():
 
 func move():
 	var old = velocity
+	velocity += forces
+	forces = Vector2.ZERO
 	velocity = move_and_slide(velocity, Vector2.UP, true)
 
 		
