@@ -338,4 +338,4 @@ position = Vector2( 1776.14, 103.897 )
 shape = SubResource( 18 )
 
 [node name="KinematicBody2D3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1643.32, 497.042 )
+position = Vector2( 1649.27, 502.995 )
