@@ -16,8 +16,8 @@ position = Vector2( 2.66969, 1.33484 )
 shape = SubResource( 1 )
 
 [node name="MovingTimer" type="Timer" parent="Node2D"]
-wait_time = 3.0
-autostart = true
+wait_time = 1.5
+one_shot = true
 
 [node name="Sprite" type="Sprite" parent="Node2D"]
 position = Vector2( 0, 0.166855 )
