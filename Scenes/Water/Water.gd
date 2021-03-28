@@ -15,7 +15,7 @@ func _on_Area2D_body_entered(body):
 		body.underwater = true
 		emit_signal("splash", body.position.x)
 
-func _on_Area2D_body_exited(body:PhysicsBody2D):
-	if body.get("underwater"):
+func _on_Area2D_body_exited(body):
+	if body.get("underwater") != null:
 		body.underwater = false
 		emit_signal("splash", body.position.x)
