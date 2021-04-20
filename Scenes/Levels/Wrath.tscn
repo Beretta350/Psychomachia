@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
+
+[node name="WrathTemplate" type="Node2D"]
+
+[node name="Base TM" type="TileMap" parent="."]
+format = 1
+
+[node name="Background TM" type="TileMap" parent="."]
+format = 1
+
+[node name="Decorative TM" type="TileMap" parent="."]
+format = 1
+
+[node name="Foreground TM" type="TileMap" parent="."]
+format = 1
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2000, 40 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -50, -30 )
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -550
+limit_top = 0
+limit_right = 2800
+limit_bottom = 600
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 4.5
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
+
+[node name="Midground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.02, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Midground"]
+
+[node name="Foreground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.05, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Foreground"]
