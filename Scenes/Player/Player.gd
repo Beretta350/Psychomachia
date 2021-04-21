@@ -189,5 +189,13 @@ func _on_PlatformTimer_timeout():
 	collision_layer = 1 | 2
 
 
-	
-	
+func _on_LavaLake_body_entered(body):
+	get_tree().reload_current_scene()
+
+
+func _on_LavaLake2_body_entered(body):
+	get_tree().reload_current_scene()
+
+
+func _on_LavaLake3_body_entered(body):
+	get_tree().reload_current_scene()
