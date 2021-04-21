@@ -129,7 +129,7 @@ func move():
 		
 	for i in range(get_slide_count()):
 		var collision = get_slide_collision(i)
-		if(get_slide_collision(i).collider.get_name().find("Spikes") != -1):
+		if(get_slide_collision(i).collider.get_name().find("Spikes")!= -1):
 			get_tree().reload_current_scene()
 		
 		if collision.collider.has_method("collide_with"):

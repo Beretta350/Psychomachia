@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Fraud/Background/background1.png" type="Texture" id=2]
@@ -9,12 +9,7 @@
 [ext_resource path="res://Sprites/Scenario/Fraud/Background/background2.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Scenario/Fraud/main_lev_buildA.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Scenario/Fraud/env_mon.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Scenario/Fraud/fire_column_medium/fire_column_medium_4.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Scenario/Fraud/fire_column_medium/fire_column_medium_5.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Scenario/Fraud/fire_column_medium/fire_column_medium_6.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Scenario/Fraud/fire_column_medium/fire_column_medium_7.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/Scenario/Fraud/fire_column_medium/fire_column_medium_8.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/Scenario/Fraud/fire_column_medium/fire_column_medium_9.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Fire/fire.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 16, 32, 16, 32, 16, 0, 16 )
@@ -255,14 +250,6 @@ points = PoolVector2Array( 80, 48, 0, 48, 0, 0, 80, 0 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 12.9317, 433.112 )
 
-[sub_resource type="SpriteFrames" id=13]
-animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="FraudTemplate" type="Node2D"]
 
 [node name="Base TM" type="TileMap" parent="."]
@@ -285,7 +272,7 @@ z_index = 1
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 900, 0 )
+position = Vector2( 900, 500 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -344,9 +331,6 @@ shape = SubResource( 12 )
 position = Vector2( 1035.08, 382.425 )
 shape = SubResource( 12 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 303.037, 397.181 )
-scale = Vector2( 4.57863, 4.1313 )
-frames = SubResource( 13 )
-frame = 1
-playing = true
+[node name="Fire" parent="." instance=ExtResource( 10 )]
+position = Vector2( 283.983, 405.209 )
+scale = Vector2( 4, 4 )
