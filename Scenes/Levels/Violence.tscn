@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Scenario/Violence/bloodmoon.jpg" type="Texture" id=2]
 
 [node name="ViolenceTemplate" type="Node2D"]
 
@@ -23,8 +24,12 @@ format = 1
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1056, 633.6 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
+position = Vector2( 513.158, 301.124 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 2 )
 
 [node name="Midground" type="ParallaxLayer" parent="ParallaxBackground"]
 
