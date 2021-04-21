@@ -26,7 +26,7 @@ extents = Vector2( 21.459, 35.9524 )
 z_index = -1
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
