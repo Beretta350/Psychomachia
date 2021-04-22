@@ -1160,7 +1160,7 @@ position = Vector2( 198.395, 28.6228 )
 scale = Vector2( 1.5, 0.8 )
 frames = SubResource( 56 )
 animation = "fire"
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
@@ -1168,7 +1168,6 @@ position = Vector2( 320.155, -50.6626 )
 scale = Vector2( 1.5, 0.8 )
 frames = SubResource( 56 )
 animation = "fire"
-frame = 1
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
@@ -1176,7 +1175,6 @@ position = Vector2( 677.883, -48.7749 )
 scale = Vector2( 1.5, 0.8 )
 frames = SubResource( 56 )
 animation = "fire"
-frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
@@ -1184,7 +1182,6 @@ position = Vector2( 151.252, 236.84 )
 scale = Vector2( 1.5, 0.8 )
 frames = SubResource( 56 )
 animation = "fire"
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -1192,6 +1189,7 @@ position = Vector2( 806.77, 27.5003 )
 scale = Vector2( 1.5, 0.8 )
 frames = SubResource( 56 )
 animation = "fire"
+frame = 5
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
@@ -1199,7 +1197,7 @@ position = Vector2( 855.035, 238.523 )
 scale = Vector2( 1.5, 0.8 )
 frames = SubResource( 56 )
 animation = "fire"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Decorative TM" type="TileMap" parent="."]
