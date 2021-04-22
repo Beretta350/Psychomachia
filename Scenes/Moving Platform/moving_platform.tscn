@@ -23,4 +23,5 @@ one_shot = true
 position = Vector2( 0, 0.166855 )
 scale = Vector2( 1.23556, 1.19562 )
 texture = ExtResource( 2 )
+
 [connection signal="timeout" from="Node2D/MovingTimer" to="Node2D" method="_on_MovingTimer_timeout"]
