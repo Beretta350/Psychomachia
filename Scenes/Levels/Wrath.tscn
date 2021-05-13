@@ -186,5 +186,4 @@ scale = Vector2( 36.7277, 2.29499 )
 
 [node name="skiff" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2511.04, 499.817 )
-
 [connection signal="body_entered" from="LavaLake" to="Player" method="_on_LavaLake_body_entered"]

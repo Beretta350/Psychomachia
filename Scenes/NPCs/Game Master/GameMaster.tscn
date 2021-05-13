@@ -1,19 +1,19 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Sprites/GameMaster/tile000.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/GameMaster/tile001.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/GameMaster/tile004.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/GameMaster/tile002.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/GameMaster/tile005.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/GameMaster/tile003.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/GameMaster/tile006.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/GameMaster/tile007.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/GameMaster/tile008.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/GameMaster/tile009.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile005.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile006.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile007.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile003.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile000.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile009.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile004.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile002.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile001.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/NPCs/GameMaster/tile008.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -26,7 +26,7 @@ extents = Vector2( 6.75774, 26.4975 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 4
+frame = 7
 playing = true
 flip_h = true
 

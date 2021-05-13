@@ -1,17 +1,17 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Sprites/Minos/tile006.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Minos/tile004.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Minos/tile000.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Minos/tile005.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Minos/tile001.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Minos/tile007.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Minos/tile003.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Minos/tile002.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/NPCs/Minos/tile007.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/NPCs/Minos/tile005.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/NPCs/Minos/tile000.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/NPCs/Minos/tile001.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/NPCs/Minos/tile004.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/NPCs/Minos/tile002.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/NPCs/Minos/tile003.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/NPCs/Minos/tile006.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -26,7 +26,6 @@ extents = Vector2( 21.459, 35.9524 )
 z_index = -1
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
