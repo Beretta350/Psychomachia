@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Greed/TreasureEdited.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/Scenario/Greed/Treasure+.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Scenario/Greed/decorative_obj.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Scenario/Greed/env_rock.png" type="Texture" id=6]
+[ext_resource path="res://Sounds/Levels/greed.mp3" type="AudioStream" id=7]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -1128,3 +1129,8 @@ shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -24.0
+autoplay = true

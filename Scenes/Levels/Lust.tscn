@@ -1,10 +1,11 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=134 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/NPCs/Minos/Minos.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Wind/Wind.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Scenario/Lust/env_mon.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Boss/Lust/Lust.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sounds/Levels/lust.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Sprites/Scenario/Lust/tileset.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Scenario/Lust/bg-moon.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Scenario/Lust/bg-graveyard.png" type="Texture" id=12]
@@ -2236,6 +2237,11 @@ wind_force = Vector2( 100, 0 )
 
 [node name="Lust" parent="." instance=ExtResource( 5 )]
 position = Vector2( 353.637, 210.176 )
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -24.0
+autoplay = true
 
 [connection signal="splash" from="Water&Splash 3/Water3" to="Water&Splash/Splash" method="splash"]
 [connection signal="splash" from="Water&Splash/Water" to="Water&Splash/Splash" method="splash"]

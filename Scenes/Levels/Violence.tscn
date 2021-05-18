@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Violence/bloodmoon.jpg" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Sprites/Fire/fire_column_medium_7.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Fire/fire_column_medium_4.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Fire/fire_column_medium_6.png" type="Texture" id=12]
+[ext_resource path="res://Sounds/Levels/violence.mp3" type="AudioStream" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1158,6 +1159,7 @@ tile_data = PoolIntArray( -262118, 0, 0, -262117, 0, 1, -262115, 0, 3, -196582, 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 198.395, 28.6228 )
 scale = Vector2( 1.5, 0.8 )
+z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
 frame = 1
@@ -1166,6 +1168,7 @@ playing = true
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
 position = Vector2( 320.155, -50.6626 )
 scale = Vector2( 1.5, 0.8 )
+z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
 playing = true
@@ -1173,6 +1176,7 @@ playing = true
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
 position = Vector2( 677.883, -48.7749 )
 scale = Vector2( 1.5, 0.8 )
+z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
 playing = true
@@ -1180,6 +1184,7 @@ playing = true
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 151.252, 236.84 )
 scale = Vector2( 1.5, 0.8 )
+z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
 playing = true
@@ -1187,6 +1192,7 @@ playing = true
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
 position = Vector2( 806.77, 27.5003 )
 scale = Vector2( 1.5, 0.8 )
+z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
 frame = 5
@@ -1195,6 +1201,7 @@ playing = true
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
 position = Vector2( 855.035, 238.523 )
 scale = Vector2( 1.5, 0.8 )
+z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
 frame = 4
@@ -1224,3 +1231,8 @@ limit_left = -550
 limit_top = 0
 limit_right = 1024
 limit_bottom = 450
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -24.0
+autoplay = true
