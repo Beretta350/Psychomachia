@@ -11,6 +11,7 @@ func _ready():
 # Player State Base
 #################################################
 func enter(player: KinematicBody2D):
+	print(tag)
 	player.play(tag)
 
 func run(player: KinematicBody2D):

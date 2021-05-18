@@ -7,5 +7,6 @@ func run(player: KinematicBody2D):
 	
 	if !player.heal:
 		return "idle"
-		
+	if player.hurt_box_excited:
+		return "hurt"
 	return null

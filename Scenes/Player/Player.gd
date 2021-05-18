@@ -27,14 +27,16 @@ var slide : bool = false
 var heal : bool = false
 var climbing : bool = false
 var dashing : bool = false
+var was_hited : bool = false
+var hurt_box_excited : bool = false
 
 var direction = Vector2(0,0)
 
 var is_on_wall : bool = false
 
 onready var arrow_cd_timer : Timer = $Timers/ArrowCoolDownTimer
+onready var hurt_area = $HurtArea/HurtBox
 onready var jump_timer : Timer = $Timers/JumpTimer
-
 onready var floor_timer : Timer = $Timers/FloorTimer
 onready var ladder_timer : Timer = $Timers/LadderTimer
 onready var platform_timer : Timer = $Timers/PlatformTimer
@@ -119,8 +121,13 @@ func update_inputs():
 		
 	if(Input.is_action_just_pressed("dash")):
 		dashing = true
+	
+	if hurt_box_excited:
+		was_hited = true
+	else:
+		was_hited = false
 
-func move():
+func move():	
 	var old = velocity
 	velocity += forces
 	forces = Vector2.ZERO
@@ -199,3 +206,12 @@ func _on_LavaLake2_body_entered(body):
 
 func _on_LavaLake3_body_entered(body):
 	get_tree().reload_current_scene()
+
+func _on_HurtArea_area_entered(area):
+	if "HitDamage" in area.name:
+		hurt_box_excited = true
+	else:
+		hurt_box_excited = false
+
+func _on_HurtArea_area_exited(area):
+	hurt_box_excited = false

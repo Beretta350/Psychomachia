@@ -27,6 +27,8 @@ func run(player: KinematicBody2D):
 #	distance_travelled = 0
 	if player.underwater:
 		return "swim"
+	if player.hurt_box_excited:
+		return "hurt"
 	return "idle"
 	
 	

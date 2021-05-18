@@ -37,7 +37,6 @@ func _physics_process(delta):
 func _on_AttackTimer_timeout():
 	hit = false
 
-
 func _on_HitArea_body_entered(body):
 	if body.name == "Player":
 		hit = true

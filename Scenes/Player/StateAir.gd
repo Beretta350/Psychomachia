@@ -36,4 +36,6 @@ func run(player: KinematicBody2D):
 		return "climb"
 	if player.dashing:
 		return "dash"
+	if player.hurt_box_excited:
+		return "hurt"
 	return null
