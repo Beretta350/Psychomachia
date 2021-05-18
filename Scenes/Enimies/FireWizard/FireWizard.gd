@@ -10,6 +10,10 @@ var attacking = false
 var player = null
 var direction = 1
 
+onready var lavaBallCD : Timer = $LavaBallCD
+
+var plLavaball := preload("res://Scenes/Enimies/FireWizard/lavaball.tscn")
+
 func _ready():
 	animation.play("idle")
 	add_to_group("enemies")
@@ -26,21 +30,30 @@ func _physics_process(delta):
 			object_body.scale.x = -1
 		else:
 			object_body.scale.x = 1
+			
+		if attacking and lavaBallCD.is_stopped():
+			var lavaball := plLavaball.instance()
+			lavaball.position = position + Vector2(0,-30)
+			lavaball.player = player
+			get_tree().current_scene.add_child(lavaball)
+			lavaBallCD.start()
 	
 	velocity += Vector2.DOWN * GRAVITY
 	velocity = move_and_slide(velocity, Vector2.UP, true)
+	
 
 func set_player(p):
 	player = p
 
 func _on_HitArea_body_entered(body):
-	print(body.name + " Entrou")
 	if body.name == "Player":
 		animation.play("attack")
 		attacking = true
 		
+		
+	
+		
 func _on_HitArea_body_exited(body):
-	print(body.name + " Saiu")
 	if body.name == "Player":
 		animation.play("idle")
 		attacking = false

@@ -17,13 +17,13 @@
 [ext_resource path="res://Sprites/Enemies/fire-wizard/fire/fire10.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Enimies/FireWizard/FireWizard.gd" type="Script" id=16]
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=1]
 radius = 182.119
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.9081, 18.5374 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": true,
@@ -41,7 +41,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -68,7 +68,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 length = 1.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -95,7 +95,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -135,7 +135,7 @@ tracks/2/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 17.2478, 20.0958 )
 
 [node name="FireWizardEnemy" type="KinematicBody2D"]
@@ -148,30 +148,34 @@ z_as_relative = false
 
 [node name="HitCollisionShape" type="CollisionShape2D" parent="Body/HitArea"]
 position = Vector2( 0.0594482, 12.8002 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 disabled = true
 
 [node name="HurtArea" type="Area2D" parent="Body"]
 
 [node name="HurtBox" type="CollisionShape2D" parent="Body/HurtArea"]
 position = Vector2( 0, 11 )
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 
 [node name="Animation" type="Node2D" parent="Body"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Animation"]
-frames = SubResource( 4 )
+frames = SubResource( 3 )
 animation = "attack"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Animation"]
 root_node = NodePath("../AnimatedSprite")
-anims/attack = SubResource( 5 )
-anims/death = SubResource( 6 )
-anims/idle = SubResource( 7 )
+anims/attack = SubResource( 4 )
+anims/death = SubResource( 5 )
+anims/idle = SubResource( 6 )
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2( -0.291885, 12.2649 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
+
+[node name="LavaBallCD" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="body_entered" from="Body/HitArea" to="." method="_on_HitArea_body_entered"]
 [connection signal="body_exited" from="Body/HitArea" to="." method="_on_HitArea_body_exited"]

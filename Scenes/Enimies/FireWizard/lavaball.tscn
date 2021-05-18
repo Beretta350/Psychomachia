@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/Projectiles/lavaball/fireball3.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Projectiles/lavaball/fireball2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Enimies/FireWizard/lavaball.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Projectiles/lavaball/fireball1.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 10.1106
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 10.5682
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+playing = true
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="HitDamage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDamage"]
+shape = SubResource( 3 )
+
+[node name="ExplosionTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="HitDamage" to="." method="_on_HitDamage_body_entered"]
