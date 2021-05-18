@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const GRAVITY = 60
-const SPEED = 30
+const SPEED = 100
 
 var velocity = Vector2()
 var direction = 1
