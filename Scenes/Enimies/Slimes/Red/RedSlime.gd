@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const GRAVITY = 60
-const SPEED = 100
+const SPEED = 70
 
 var velocity = Vector2()
 var direction = 1
@@ -42,8 +42,9 @@ func _physics_process(delta):
 		animations.play("jump")
 	
 	velocity += Vector2.DOWN * GRAVITY
-		
-	velocity = move_and_slide(velocity, Vector2.UP, true)
+	
+	if (player.global_position - global_position).length() < 200:
+		velocity = move_and_slide(velocity, Vector2.UP, true)
 
 func set_player(p):
 	player = p
