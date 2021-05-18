@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Wrath/parallax-demon-woods-far-trees.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sprites/Scenario/Wrath/env_ground.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Water/WaterStyx.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/skiff/skiff.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sounds/Levels/wrath.mp3" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1166.26, 62.5768 )
@@ -186,4 +187,10 @@ scale = Vector2( 36.7277, 2.29499 )
 
 [node name="skiff" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2511.04, 499.817 )
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -24.0
+autoplay = true
+
 [connection signal="body_entered" from="LavaLake" to="Player" method="_on_LavaLake_body_entered"]
