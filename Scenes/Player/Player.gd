@@ -48,7 +48,11 @@ onready var tween : Tween = $Tween
 onready var waves : Particles2D = $Waves
 
 func _ready():
+	
 	state_machine.init(self)
+	
+	yield(get_tree(), "idle_frame")
+	get_tree().call_group("enemies", "set_player", self)
 	
 
 func _physics_process(delta):
