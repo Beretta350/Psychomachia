@@ -2240,7 +2240,7 @@ scale = Vector2( 1, 2 )
 wind_force = Vector2( 100, 0 )
 
 [node name="Lust" parent="." instance=ExtResource( 5 )]
-position = Vector2( 353.637, 210.176 )
+position = Vector2( 374.632, 197.763 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
