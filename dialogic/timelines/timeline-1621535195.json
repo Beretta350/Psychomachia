@@ -10,7 +10,7 @@
 			"character": "character-1621546217.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Você é aquela criança... aquela menina que enviei pro Limbo. O que você faz por aqui?"
+			"text": "Você é aquela humana... aquela menina que enviei pro Limbo. Lain, o que você faz por aqui?"
 		},
 		{
 			"character": "character-1621534584.json",
@@ -28,19 +28,25 @@
 			"character": "character-1621546217.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Eu sou Minos, juiz dos mortos. Em minhas mãos, as almas confessam todos os seus pecados, e eu decido para onde elas deverão seguir. "
+			"text": "Eu sou Minos, juiz dos mortos. Em minhas mãos, as almas confessam seus pecados, e eu decido para onde elas deverão seguir. Quem partiu, quem pecou, cabe a mim designar."
 		},
 		{
 			"character": "character-1621546217.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Aqui não é lugar para crianças, grandes perigos estão pela frente."
+			"text": "Aqui não é lugar para crianças, grandes perigos estão pela frente. . Você viveu sem pecados e pertence ao Limbo. Volte, pequena."
 		},
 		{
 			"character": "character-1621534584.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Eu preciso descer... estou procurando alguém. "
+		},
+		{
+			"character": "character-1621546217.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Siga com cuidado, o Inferno é cruel com pequenos humanos como você."
 		}
 	],
 	"metadata": {
