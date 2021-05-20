@@ -118,7 +118,7 @@ tracks/4/keys = {
 "values": [ true, true, false, false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -213,13 +213,12 @@ disabled = true
 [node name="Animation" type="Node2D" parent="Body"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Animation"]
-position = Vector2( 32, 20 )
 frames = SubResource( 4 )
-animation = "idle"
+animation = "attack"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Animation"]
 root_node = NodePath("../AnimatedSprite")
 anims/attack = SubResource( 5 )
-anims/idle = SubResource( 7 )
+anims/idle = SubResource( 6 )
 
 [connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_AttackTimer_timeout"]

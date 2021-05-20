@@ -21,7 +21,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.5, 19 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 13.25, 19 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -29,14 +29,14 @@ extents = Vector2( 9, 19 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "walk",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walk",
 "speed": 10.0
 } ]
 
@@ -75,10 +75,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, false ]
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -137,7 +137,7 @@ shape = SubResource( 1 )
 [node name="HitDamageCollisionShape" type="CollisionShape2D" parent="Body/HitDamageArea"]
 position = Vector2( -2, 10 )
 z_as_relative = false
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 disabled = true
 
 [node name="HurtArea" type="Area2D" parent="Body"]
@@ -150,7 +150,7 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Animation"]
 frames = SubResource( 4 )
-animation = "walk"
+animation = "attack"
 frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Animation"]

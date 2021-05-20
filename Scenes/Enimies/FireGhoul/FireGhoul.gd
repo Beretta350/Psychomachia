@@ -29,7 +29,8 @@ func _physics_process(delta):
 				direction = 1
 			else:
 				direction = -1	
-
+		else:
+			animations.play("walk")
 	if direction == 1:
 		object_body.scale.x = -1
 	else:
