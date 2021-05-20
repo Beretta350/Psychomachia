@@ -12,7 +12,7 @@
 [ext_resource path="res://Sprites/Fire/fire_column_medium_7.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Fire/fire_column_medium_4.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Fire/fire_column_medium_6.png" type="Texture" id=12]
-[ext_resource path="res://Sounds/Levels/violence.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/Levels/violance.mp3" type="AudioStream" id=13]
 [ext_resource path="res://Scenes/Boss/NightBorne/TeleportTrigger.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Boss/NightBorne/NightBorne.tscn" type="PackedScene" id=15]
 
@@ -1164,7 +1164,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
@@ -1173,6 +1173,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
@@ -1181,6 +1182,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
@@ -1189,6 +1191,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -1197,7 +1200,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 5
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
@@ -1206,7 +1209,6 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 4
 playing = true
 
 [node name="Decorative TM" type="TileMap" parent="."]
