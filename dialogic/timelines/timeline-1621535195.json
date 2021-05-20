@@ -1,6 +1,47 @@
 {
 	"events": [
-
+		{
+			"character": "character-1621546217.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Espere aí... Eu me lembro de você."
+		},
+		{
+			"character": "character-1621546217.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você é aquela criança... aquela menina que enviei pro Limbo. O que você faz por aqui?"
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Quem é você?"
+		},
+		{
+			"character": "character-1621546217.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu sou Minos, juiz dos mortos. Em minhas mãos, as almas confessam todos os seus pecados, e eu decido para onde elas deverão seguir. "
+		},
+		{
+			"character": "character-1621546217.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Aqui não é lugar para crianças, grandes perigos estão pela frente."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu preciso descer... estou procurando alguém. "
+		}
 	],
 	"metadata": {
 		"dialogic-version": "1.2",

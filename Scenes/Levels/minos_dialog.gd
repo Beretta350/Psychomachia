@@ -28,7 +28,7 @@ func _on_Area2D_body_entered(body):
 	if body.name=="Player":
 		if check==false:
 			get_tree().paused=true
-			var dialog = Dialogic.start('intro')	
+			var dialog = Dialogic.start('minos')	
 			dialog.pause_mode = Node.PAUSE_MODE_PROCESS
 			dialog.connect('timeline_end', self, 'unpause')
 			add_child(dialog)
