@@ -6,10 +6,12 @@ const SPEED = 150
 var velocity = Vector2()
 var direction = 1
 var hit = false
+var teleport = null
 
 onready var attack_timer = $Timers/AttackTimer
 onready var animations = $Body/Animation/AnimationPlayer
 onready var object_body = $Body
+onready var teleport_timer = $TeleportTimer
 
 var player = null
 
@@ -17,8 +19,22 @@ func _ready():
 	animations.play("walk")
 	add_to_group("enemies") # Replace with function body.
 	
+	yield(get_tree(), "idle_frame")
+	get_tree().call_group("teleport_triggers", "set_nightborne", self)
+	
 func _physics_process(delta):
-	if hit and attack_timer.is_stopped():
+	if teleport != null:
+		velocity = Vector2(0,0)
+		animations.play("teleport")
+		if teleport_timer.is_stopped():
+			global_position = teleport
+			teleport = null
+			teleport_timer.start()
+	elif not teleport_timer.is_stopped():
+		velocity = Vector2(0,0)
+		animations.play("teleport")
+	
+	elif hit and attack_timer.is_stopped():
 		animations.play("attack")
 		velocity.x = 0
 		attack_timer.start()
