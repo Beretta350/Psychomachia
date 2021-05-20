@@ -41,11 +41,15 @@ func _physics_process(delta):
 				
 		animations.play("jump")
 	
-	velocity += Vector2.DOWN * GRAVITY
 	
 	if (player.global_position - global_position).length() < 200:
 		velocity = move_and_slide(velocity, Vector2.UP, true)
-
+	else:
+		velocity.x = 0
+		velocity = move_and_slide(velocity, Vector2.UP, true)
+		
+	velocity += Vector2.DOWN * GRAVITY
+	
 func set_player(p):
 	player = p
 

@@ -67,7 +67,7 @@ extents = Vector2( 10.4448, 14.3988 )
 extents = Vector2( 13.6828, 25.0851 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 17.2109, 25.2603 )
+extents = Vector2( 14.3146, 25.2603 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8.25058, 11.5794 )
@@ -79,29 +79,29 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 36 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 54 ), ExtResource( 53 ) ],
-"loop": true,
-"name": "walk",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "hit",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 33 ), ExtResource( 21 ), ExtResource( 4 ), ExtResource( 26 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 44 ), ExtResource( 46 ) ],
-"loop": true,
-"name": "attack",
-"speed": 10.0
 }, {
 "frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 1 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 57 ), ExtResource( 1 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "teleport",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 36 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 54 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 47 ), ExtResource( 37 ), ExtResource( 6 ), ExtResource( 31 ), ExtResource( 19 ), ExtResource( 49 ), ExtResource( 5 ), ExtResource( 28 ), ExtResource( 24 ), ExtResource( 7 ), ExtResource( 23 ), ExtResource( 8 ), ExtResource( 32 ), ExtResource( 9 ), ExtResource( 30 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 34 ) ],
 "loop": false,
 "name": "death",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 33 ), ExtResource( 21 ), ExtResource( 4 ), ExtResource( 26 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 44 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "attack",
 "speed": 10.0
 } ]
 
@@ -471,7 +471,7 @@ disabled = true
 z_as_relative = false
 
 [node name="HitCollisionShape" type="CollisionShape2D" parent="Body/HitArea"]
-position = Vector2( 29.189, -0.2973 )
+position = Vector2( 26.189, -0.2973 )
 z_as_relative = false
 shape = SubResource( 3 )
 
