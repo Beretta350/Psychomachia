@@ -1,6 +1,6 @@
 extends BasePlayerState
 
-export var jump_speed : float = 650
+export var jump_speed : float = 680
 
 func run(player: KinematicBody2D):
 	player.vy = -jump_speed
