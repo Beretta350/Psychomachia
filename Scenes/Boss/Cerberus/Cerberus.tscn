@@ -11,7 +11,7 @@
 [ext_resource path="res://Sprites/Boss/Cerberus/tile000.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Boss/Cerberus/Cerberus.gd" type="Script" id=10]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 7 ) ],
 "loop": true,
@@ -29,23 +29,24 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 31.4988, 25.4068 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32.0636, 26.0519 )
 
 [node name="Cerberus" type="KinematicBody2D"]
 script = ExtResource( 10 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-animation = "walking_right"
-frame = 2
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Animation" type="Node2D" parent="Body"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Animation"]
+frames = SubResource( 2 )
+animation = "walking_left"
+frame = 1
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 7.62939e-06, 1.68179 )
-shape = SubResource( 2 )
+[node name="HitDamageArea" type="Area2D" parent="Body"]
 
-[node name="WalkingTimer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-[connection signal="timeout" from="WalkingTimer" to="." method="_on_WalkingTimer_timeout"]
+[node name="HitDamageCollision" type="CollisionShape2D" parent="Body/HitDamageArea"]
+position = Vector2( -0.0835724, 1.41494 )
+shape = SubResource( 3 )

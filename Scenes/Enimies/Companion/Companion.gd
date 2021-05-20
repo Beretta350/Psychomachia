@@ -19,7 +19,6 @@ func _physics_process(delta):
 	
 	var vec_to_player = player.global_position - global_position
 	
-	print(vec_to_player)
 	
 	if vec_to_player.length() < 50:
 		return

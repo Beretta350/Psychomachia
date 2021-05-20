@@ -11,6 +11,8 @@ func enter(player: KinematicBody2D):
 	player.anim.playback_speed = anim_speed
 
 func run(player: KinematicBody2D):
+	if player.hurt_box_excited:
+		return "hurt"
 	if player.was_hited:
 		return "hit"
 	if player.ladder_area and player.vertical < 0:
