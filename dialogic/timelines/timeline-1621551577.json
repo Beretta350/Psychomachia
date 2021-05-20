@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1621551707.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": ""
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1621551577.json",
+		"name": "socrates"
+	}
+}
