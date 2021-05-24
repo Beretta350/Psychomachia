@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Menus/Main/FadeIn.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Menus/Main/Menu.gd" type="Script" id=5]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0 )
 draw_center = false
 border_width_left = 2
@@ -15,13 +15,13 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.498039, 0.0666667, 0.0666667, 1 )
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 script/source = "extends Button
 
 export(String) var scene_to_load
 "
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -29,7 +29,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.498039, 0.0666667, 0.0666667, 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -37,8 +37,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.498039, 0.0666667, 0.0666667, 1 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "fade_in"
+[sub_resource type="Animation" id=5]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -105,9 +104,9 @@ margin_right = 784.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 360, 60 )
 mouse_default_cursor_shape = 2
-custom_styles/focus = SubResource( 4 )
+custom_styles/focus = SubResource( 1 )
 flat = true
-script = SubResource( 3 )
+script = SubResource( 2 )
 scene_to_load = "res://Scenes/Levels/Limbo.tscn"
 
 [node name="NewGameLabel" type="Label" parent="MainMenu/Buttons/NewGame"]
@@ -130,9 +129,9 @@ margin_right = 784.0
 margin_bottom = 189.0
 rect_min_size = Vector2( 360, 60 )
 mouse_default_cursor_shape = 2
-custom_styles/focus = SubResource( 5 )
+custom_styles/focus = SubResource( 3 )
 flat = true
-script = SubResource( 3 )
+script = SubResource( 2 )
 scene_to_load = "res://Scenes/Menus/Load/Load.tscn"
 
 [node name="LoadGameLabel" type="Label" parent="MainMenu/Buttons/LoadGame"]
@@ -155,9 +154,9 @@ margin_right = 784.0
 margin_bottom = 254.0
 rect_min_size = Vector2( 360, 60 )
 mouse_default_cursor_shape = 2
-custom_styles/focus = SubResource( 6 )
+custom_styles/focus = SubResource( 4 )
 flat = true
-script = SubResource( 3 )
+script = SubResource( 2 )
 scene_to_load = "exit_game"
 
 [node name="ExitGameLabel" type="Label" parent="MainMenu/Buttons/ExitGame"]
@@ -193,7 +192,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FadeIn"]
-anims/fade_in = SubResource( 1 )
+anims/fade_in = SubResource( 5 )
 
 [connection signal="pressed" from="MainMenu/Buttons/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/LoadGame" to="." method="_on_LoadGame_pressed"]

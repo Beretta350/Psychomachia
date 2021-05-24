@@ -4,6 +4,12 @@
 			"character": "character-1621551707.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
+			"text": "aaaaa"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
 			"text": ""
 		}
 	],
