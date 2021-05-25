@@ -1,9 +1,40 @@
 extends Control
 
 var scene_to_load
+var level_reached = 0
 
 func _ready():
 	$SaveList/Save0.grab_focus()
+	
+	var level_file = File.new()
+	
+	if !level_file.file_exists("res://save/max_level.dat"):
+		print("creating file")
+		level_file.open("res://save/max_level.dat", File.WRITE)
+		level_file.store_8(level_reached)
+		level_file.close()
+	
+	
+	level_file.open("res://save/max_level.dat", File.READ)
+	level_reached = level_file.get_8()
+	level_file.close()
+	
+	if level_reached < 1:
+		$SaveList/Save1.hide()
+	if level_reached < 2:
+		$SaveList/Save2.hide()
+	if level_reached < 3:
+		$SaveList/Save3.hide()
+	if level_reached < 4:
+		$SaveList/Save4.hide()
+	if level_reached < 5:
+		$SaveList/Save5.hide()
+	if level_reached < 6:
+		$SaveList/Save6.hide()
+	if level_reached < 7:
+		$SaveList/Save7.hide()
+	if level_reached < 8:
+		$SaveList/Save8.hide()
 
 func _on_Back_pressed():
 	scene_to_load = "res://Scenes/Menus/Main/Menu.tscn"
