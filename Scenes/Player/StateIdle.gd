@@ -40,7 +40,7 @@ func run(player: KinematicBody2D):
 	if player.climbing:
 		return "climb"
 	if player.dashing:
-		return "dash"
+		player.dashing = false
 	if player.hurt_box_excited:
 		return "hurt"
 #	else:
