@@ -46,6 +46,7 @@ onready var anim : AnimationPlayer = $AnimatedSprite/AnimationPlayer
 onready var state_machine: PlayerFSM = $PlayerStates
 onready var tween : Tween = $Tween
 onready var waves : Particles2D = $Waves
+export onready var scene_name=get_tree().get_current_scene().get_name()
 
 func _ready():
 	
@@ -53,6 +54,7 @@ func _ready():
 	
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("enemies", "set_player", self)
+	print(scene_name)
 	
 
 func _physics_process(delta):
@@ -76,7 +78,8 @@ func update_inputs():
 		bow_equip = false
 	
 	if(Input.is_action_just_pressed("bow")):
-		bow_equip = true
+		if(scene_name!="TreacheryTemplate"):
+			bow_equip = true
 	
 	horizontal = (
 		int(Input.is_action_pressed("ui_right"))
@@ -100,9 +103,11 @@ func update_inputs():
 			bow_atk=false
 	else:
 		if Input.is_action_pressed("light_attack"):
-			attacking=true
+			if(scene_name!="FraudTemplate" && scene_name!="TreacheryTemplate"):
+				attacking=true
 		elif Input.is_action_pressed("heavy_attack"):
-			h_attacking=true
+			if(scene_name!="HeresyTemplate" && scene_name!="ViolenceTemplate" && scene_name!="FraudTemplate" && scene_name!="TreacheryTemplate"):
+				h_attacking=true
 		else:
 			h_attacking=false
 			attacking=false
@@ -112,18 +117,18 @@ func update_inputs():
 	else:
 		slide=false
 		
-	if(Input.is_action_pressed("heal")):
+	if(Input.is_action_pressed("heal") && (scene_name=="LimboTemplate" || scene_name=="LustTemplate" || scene_name=="GluttonyTemplate" || scene_name=="Greed")):
 		heal = true
 	else: 
 		heal=false
 		
-	if(Input.is_action_pressed("climb")):
+	if(Input.is_action_pressed("climb") && (scene_name=="LimboTemplate" || scene_name=="LustTemplate" || scene_name=="GluttonyTemplate")):
 		if is_on_wall:
 			climbing=true
 	else: 
 		climbing=false
 		
-	if(Input.is_action_just_pressed("dash")):
+	if(Input.is_action_just_pressed("dash") && (scene_name=="LimboTemplate" || scene_name=="LustTemplate")):
 		dashing = true
 	
 	if hurt_box_excited:
