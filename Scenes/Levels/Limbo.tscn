@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/Levels/intro.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Enimies/Companion/Companion.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/NPCs/Greek Sage/GreekSage.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Levels/gotolust.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1343,7 +1343,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 radius = 62.2996
 
 [sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 371.06, 6.79572 )
+extents = Vector2( 324.294, 6.79572 )
 
 [node name="LimboTemplate" type="Node2D"]
 
