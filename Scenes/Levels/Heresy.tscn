@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Heresy/Background.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Sounds/Levels/heresy.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Boss/FireDemon/FireDemon.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Boss/FireDemon/FireDemonTrigger.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -885,6 +886,9 @@ extents = Vector2( 420.461, 138.678 )
 [sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 301.694, 88.884 )
 
+[sub_resource type="RectangleShape2D" id=46]
+extents = Vector2( 528.646, 37.8616 )
+
 [node name="HeresyTemplate" type="Node2D"]
 
 [node name="Base TM" type="TileMap" parent="."]
@@ -986,6 +990,14 @@ position = Vector2( 235.243, -192.606 )
 [node name="Area2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 250.584, 520.743 )
 
+[node name="Next_Scene" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next_Scene"]
+position = Vector2( -452, 808 )
+shape = SubResource( 46 )
+script = ExtResource( 10 )
+
 [connection signal="body_entered" from="LavaLake" to="Player" method="_on_LavaLake_body_entered"]
 [connection signal="body_entered" from="LavaLake2" to="Player" method="_on_LavaLake2_body_entered"]
 [connection signal="body_entered" from="LavaLake3" to="Player" method="_on_LavaLake3_body_entered"]
+[connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]

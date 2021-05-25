@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/NPCs/Minos/Minos.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Boss/Lust/Lust.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sounds/Levels/lust.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Levels/minos_dialog.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=8]
 [ext_resource path="res://Sprites/Scenario/Lust/tileset.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Scenario/Lust/bg-moon.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Scenario/Lust/bg-graveyard.png" type="Texture" id=12]
@@ -2108,6 +2109,9 @@ points = PoolVector2Array( 32, 48, 0, 48, 0, 32, 32, 32 )
 [sub_resource type="CapsuleShape2D" id=121]
 height = 211.679
 
+[sub_resource type="RectangleShape2D" id=122]
+extents = Vector2( 565.825, 43.7237 )
+
 [node name="LustTemplate" type="Node2D"]
 
 [node name="Base TM" type="TileMap" parent="."]
@@ -2255,7 +2259,15 @@ script = ExtResource( 7 )
 position = Vector2( -5.35132, 55.2981 )
 shape = SubResource( 121 )
 
+[node name="Next_Scene" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next_Scene"]
+position = Vector2( -527.459, 633.739 )
+shape = SubResource( 122 )
+script = ExtResource( 8 )
+
 [connection signal="splash" from="Water&Splash 3/Water3" to="Water&Splash/Splash" method="splash"]
 [connection signal="splash" from="Water&Splash/Water" to="Water&Splash/Splash" method="splash"]
 [connection signal="splash" from="Water&Splash 2/Water2" to="Water&Splash 2/Splash2" method="splash"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]

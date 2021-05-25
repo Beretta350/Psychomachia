@@ -1343,7 +1343,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 radius = 62.2996
 
 [sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 324.294, 6.79572 )
+extents = Vector2( 381.414, 30.9584 )
 
 [node name="LimboTemplate" type="Node2D"]
 
@@ -1437,7 +1437,7 @@ z_index = -1
 position = Vector2( -104.573, 529.167 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_Scene"]
-position = Vector2( -141.111, 44.0972 )
+position = Vector2( -198.322, 44.0972 )
 shape = SubResource( 33 )
 script = ExtResource( 11 )
 
