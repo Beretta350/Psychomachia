@@ -1,9 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/HUD/LifeBar.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+onready var life_bar = $LifeBar/TextureProgress
+
+var player = null
+
+func _ready():
+	add_to_group(\"HUD\")
+
+func _process(delta):
+	if player != null:
+		life_bar.value = player.life
+	else:
+		life_bar.value = 100
+
+func set_player(p):
+	player = p
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends HBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2( 0.6, 0.6 )
 transform = Transform2D( 0.6, 0, 0, 0.6, 0, 0 )
+script = SubResource( 1 )
 
 [node name="LifeBar" parent="." instance=ExtResource( 1 )]
+script = SubResource( 2 )

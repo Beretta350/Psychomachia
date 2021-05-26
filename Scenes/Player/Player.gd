@@ -36,6 +36,7 @@ var is_on_wall : bool = false
 
 var checkpoint = null
 
+var life = 100
 onready var arrow_cd_timer : Timer = $Timers/ArrowCoolDownTimer
 onready var hurt_area = $HurtArea/HurtBox
 onready var jump_timer : Timer = $Timers/JumpTimer
@@ -44,10 +45,12 @@ onready var ladder_timer : Timer = $Timers/LadderTimer
 onready var platform_timer : Timer = $Timers/PlatformTimer
 onready var dash_timer : Timer = $Timers/DashTimer
 onready var sprite : AnimatedSprite = $AnimatedSprite
+onready var body : Node2D = $Body
 onready var anim : AnimationPlayer = $AnimatedSprite/AnimationPlayer
 onready var state_machine: PlayerFSM = $PlayerStates
 onready var tween : Tween = $Tween
 onready var waves : Particles2D = $Waves
+onready var invecible_timer = $Timers/InvencibleTimer
 export onready var scene_name=get_tree().get_current_scene().get_name()
 
 func _ready():
@@ -57,6 +60,7 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("enemies", "set_player", self)
 	get_tree().call_group("checkpoints", "set_player", self)
+	get_tree().call_group("HUD", "set_player", self)
 	print(scene_name)
 	
 
@@ -98,22 +102,26 @@ func update_inputs():
 	if is_on_floor():
 		floor_timer.start()
 	
-	
-	if(bow_equip==true):
-		if Input.is_action_pressed("light_attack"):
-			bow_atk=true
+	if not hurt_box_excited:
+		if(bow_equip==true):
+			if Input.is_action_pressed("light_attack"):
+				bow_atk=true
+			else:
+				bow_atk=false
 		else:
-			bow_atk=false
+			if Input.is_action_pressed("light_attack"):
+				if(scene_name!="FraudTemplate" && scene_name!="TreacheryTemplate"):
+					attacking=true
+			elif Input.is_action_pressed("heavy_attack"):
+				if(scene_name!="HeresyTemplate" && scene_name!="ViolenceTemplate" && scene_name!="FraudTemplate" && scene_name!="TreacheryTemplate"):
+					h_attacking=true
+			else:
+				h_attacking=false
+				attacking=false
 	else:
-		if Input.is_action_pressed("light_attack"):
-			if(scene_name!="FraudTemplate" && scene_name!="TreacheryTemplate"):
-				attacking=true
-		elif Input.is_action_pressed("heavy_attack"):
-			if(scene_name!="HeresyTemplate" && scene_name!="ViolenceTemplate" && scene_name!="FraudTemplate" && scene_name!="TreacheryTemplate"):
-				h_attacking=true
-		else:
-			h_attacking=false
-			attacking=false
+		h_attacking=false
+		attacking=false
+		bow_atk=false
 			
 	if(Input.is_action_pressed("slide")):
 		slide=true
@@ -134,27 +142,32 @@ func update_inputs():
 	if(Input.is_action_just_pressed("dash") && (scene_name=="LimboTemplate" || scene_name=="LustTemplate")):
 		dashing = true
 	
-	if hurt_box_excited:
+	if hurt_box_excited :
 		was_hited = true
+		if invecible_timer.is_stopped():
+			life -= 20
+			invecible_timer.start()
 	else:
 		was_hited = false
 
-func move():	
-	var old = velocity
-	velocity += forces
-	forces = Vector2.ZERO
-	velocity = move_and_slide(velocity, Vector2.UP, true)
+func move():
+	if life > 0:
+		var old = velocity
+		velocity += forces
+		forces = Vector2.ZERO
+		velocity = move_and_slide(velocity, Vector2.UP, true)
 
-		
-	for i in range(get_slide_count()):
-		var collision = get_slide_collision(i)
-		if(get_slide_collision(i).collider.get_name().find("Spikes")!= -1):
-			self.death()
-		
-		if collision.collider.has_method("collide_with"):
 			
-			collision.collider.collide_with(collision,self)
+		for i in range(get_slide_count()):
+			var collision = get_slide_collision(i)
+			if(get_slide_collision(i).collider.get_name().find("Spikes")!= -1):
+				self.death()
 			
+			if collision.collider.has_method("collide_with"):
+				
+				collision.collider.collide_with(collision,self)
+	else:
+		self.death()		
 
 
 func apply_gravity (gravity:float):
@@ -187,7 +200,12 @@ func _get_vx():
 	return vx
 func _set_vx(val:float):
 	if val != 0:
-		sprite.flip_h = (val > 0)
+		if val > 0:
+			body.scale.x = -1
+			sprite.flip_h = true
+		else:
+			body.scale.x = 1
+			sprite.flip_h = false
 	velocity.x = val
 	vx = val
 
@@ -213,14 +231,11 @@ func _get_jumping():
 func _on_PlatformTimer_timeout():
 	collision_layer = 1 | 2
 
-
 func _on_LavaLake_body_entered(body):
 	self.death()
 
-
 func _on_LavaLake2_body_entered(body):
 	self.death()
-
 
 func _on_LavaLake3_body_entered(body):
 	self.death()
