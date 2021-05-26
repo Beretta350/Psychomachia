@@ -12,6 +12,8 @@ func _ready():
 func _physics_process(delta):
 	if nightborne == null:
 		return
+	if !nightborne.triggered:
+		return
 		
 	player_in = false
 	nb_in = false

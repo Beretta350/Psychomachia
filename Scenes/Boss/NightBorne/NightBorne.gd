@@ -7,6 +7,7 @@ var velocity = Vector2()
 var direction = 1
 var hit = false
 var teleport = null
+var triggered = false
 
 onready var attack_timer = $Timers/AttackTimer
 onready var animations = $Body/Animation/AnimationPlayer
@@ -21,8 +22,11 @@ func _ready():
 	
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("teleport_triggers", "set_nightborne", self)
+	get_tree().call_group("nighborne_triggers", "set_nightborne", self)
 	
 func _physics_process(delta):
+	if !triggered:
+		return
 	if teleport != null:
 		velocity = Vector2(0,0)
 		animations.play("teleport")
@@ -60,6 +64,10 @@ func _physics_process(delta):
 	if is_on_wall() and (player.global_position - global_position).length() >= 300:
 		direction = direction * -1
 
+func death():
+	yield(get_tree(), "idle_frame")
+	get_tree().call_group("arena_walls", "desable")
+	
 func set_player(p):
 	player = p
 

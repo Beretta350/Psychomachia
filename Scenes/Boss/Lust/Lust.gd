@@ -16,6 +16,8 @@ var player = null
 func _ready():
 	add_to_group("enemies") # Replace with function body.
 	
+	
+	
 func _physics_process(delta):
 	
 		
@@ -49,6 +51,9 @@ func _physics_process(delta):
 func set_player(p):
 	player = p
 
+func death():
+	yield(get_tree(), "idle_frame")
+	get_tree().call_group("wind", "deactivate")
 
 func _on_AttackTimer_timeout():
 	hit = false

@@ -2241,10 +2241,14 @@ scale = Vector2( 0.5, 2 )
 wind_force = Vector2( 100, 0 )
 
 [node name="Wind2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 221.837, 361.841 )
-rotation = 3.40339
-scale = Vector2( 1, 2 )
-wind_force = Vector2( 100, 0 )
+position = Vector2( 229.846, 407.893 )
+scale = Vector2( 1, -1 )
+wind_force = Vector2( 0, -300 )
+
+[node name="Wind3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 771.124, 418.572 )
+scale = Vector2( 1, -1 )
+wind_force = Vector2( 0, -300 )
 
 [node name="Lust" parent="." instance=ExtResource( 5 )]
 position = Vector2( 374.632, 197.763 )
