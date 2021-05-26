@@ -9,6 +9,7 @@ func _ready():
 func _physics_process(delta):
 	if demon == null:
 		return
+		
 	for area in get_overlapping_areas():
 		if area.get_parent().get_name().find('Player') != -1:
 			demon.triggered = true
