@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Limbo/dark_tiles.png" type="Texture" id=2]
@@ -12,6 +12,12 @@
 [ext_resource path="res://Scenes/NPCs/Greek Sage/GreekSage.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Levels/TutorialClimb.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Levels/TutorialDoubleJump.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Levels/TutorialDash.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Levels/TutorialCombat.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Enimies/Slimes/Blue/BlueSlime.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Levels/TutorialCombat2.gd" type="Script" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1341,10 +1347,25 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 29/z_index = 0
 
 [sub_resource type="CircleShape2D" id=32]
-radius = 62.2996
+radius = 190.763
 
 [sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 381.414, 30.9584 )
+
+[sub_resource type="CapsuleShape2D" id=34]
+height = 159.518
+
+[sub_resource type="CapsuleShape2D" id=35]
+height = 154.23
+
+[sub_resource type="CircleShape2D" id=36]
+radius = 61.2146
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 308.03, 10 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 87.6591, 10 )
 
 [node name="LimboTemplate" type="Node2D"]
 
@@ -1444,5 +1465,53 @@ position = Vector2( -198.322, 44.0972 )
 shape = SubResource( 33 )
 script = ExtResource( 11 )
 
+[node name="TutorialClimb" type="Area2D" parent="."]
+position = Vector2( 577.814, 515.905 )
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialClimb"]
+position = Vector2( 15.874, 0 )
+shape = SubResource( 34 )
+
+[node name="TutorialDoubleJump" type="Area2D" parent="."]
+position = Vector2( 1795.32, 232.554 )
+script = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialDoubleJump"]
+position = Vector2( 5.34546, 0 )
+shape = SubResource( 35 )
+
+[node name="TutorialDash" type="Area2D" parent="."]
+position = Vector2( 841.558, 60.3555 )
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialDash"]
+position = Vector2( 0, 17.4614 )
+shape = SubResource( 36 )
+
+[node name="BlueSlimeEnemy" parent="." instance=ExtResource( 17 )]
+position = Vector2( 871.384, 265.53 )
+
+[node name="TutorialCombat" type="Area2D" parent="."]
+position = Vector2( 942.872, 285.947 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialCombat"]
+position = Vector2( 21.7091, 0 )
+shape = SubResource( 37 )
+
+[node name="TutorialCombat2" type="Area2D" parent="."]
+position = Vector2( 632.076, 397.198 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialCombat2"]
+position = Vector2( 21.1892, 11.6541 )
+shape = SubResource( 38 )
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]
+[connection signal="body_entered" from="TutorialClimb" to="TutorialClimb" method="_on_TutorialClimb_body_entered"]
+[connection signal="body_entered" from="TutorialDoubleJump" to="TutorialDoubleJump" method="_on_TutorialDoubleJump_body_entered"]
+[connection signal="body_entered" from="TutorialDash" to="TutorialDash" method="_on_TutorialDash_body_entered"]
+[connection signal="body_entered" from="TutorialCombat" to="TutorialCombat" method="_on_TutorialCombat_body_entered"]
+[connection signal="body_entered" from="TutorialCombat2" to="TutorialCombat2" method="_on_TutorialCombat2_body_entered"]

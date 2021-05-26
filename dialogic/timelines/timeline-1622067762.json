@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Aperte \"2\" para trocar para o arco. Ataque com o arco clicando com o botão esquerdo do mouse."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622067762.json",
+		"name": "tutorialcombat2"
+	}
+}
