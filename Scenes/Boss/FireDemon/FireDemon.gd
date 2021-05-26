@@ -70,3 +70,7 @@ func _physics_process(delta):
 		pos = 0
 	
 	move_and_collide(vec_to_pos.normalized() * SPEED  * delta)
+	
+func death():
+	yield(get_tree(), "idle_frame")
+	get_tree().call_group("invisible wall", "queue_free")
