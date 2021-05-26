@@ -4,13 +4,25 @@
 			"character": "character-1621551707.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "aaaaa"
+			"text": "Preferi continuar à procura da verdadeira resposta numa vida além da morte, do que continuar a viver uma vida na Terra que não me permitia questionar."
 		},
 		{
-			"character": "",
+			"character": "character-1621551707.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "Aqui, construí o Castelo da Ciência Humana e pude continuar meu questionamento. Ainda há muito o que fazer, pesquisar, aprender. Nada sei, apenas que eternamente continuarei na minha busca."
+		},
+		{
+			"character": "character-1621551707.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "E você, o que procura? "
+		},
+		{
+			"character": "character-1621551707.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Siga com cuidado..."
 		}
 	],
 	"metadata": {
