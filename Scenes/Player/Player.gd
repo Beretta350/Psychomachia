@@ -149,10 +149,7 @@ func move():
 	for i in range(get_slide_count()):
 		var collision = get_slide_collision(i)
 		if(get_slide_collision(i).collider.get_name().find("Spikes")!= -1):
-			if checkpoint != null:
-				checkpoint.reset()
-			else:
-				get_tree().reload_current_scene()
+			self.death()
 		
 		if collision.collider.has_method("collide_with"):
 			
@@ -176,6 +173,12 @@ func tween_to_ladder():
 
 func can_climb():
 	return ladder_area and ladder_timer.is_stopped()
+
+func death():
+	if checkpoint != null:
+		checkpoint.reset()
+		return
+	get_tree().reload_current_scene()
 
 ###########################################################
 # Setget
@@ -212,24 +215,15 @@ func _on_PlatformTimer_timeout():
 
 
 func _on_LavaLake_body_entered(body):
-	if checkpoint != null:
-		checkpoint.reset()
-		return
-	get_tree().reload_current_scene()
+	self.death()
 
 
 func _on_LavaLake2_body_entered(body):
-	if checkpoint != null:
-		checkpoint.reset()
-		return
-	get_tree().reload_current_scene()
+	self.death()
 
 
 func _on_LavaLake3_body_entered(body):
-	if checkpoint != null:
-		checkpoint.reset()
-		return
-	get_tree().reload_current_scene()
+	self.death()
 
 func _on_HurtArea_area_entered(area):
 	if "HitDamage" in area.name:
