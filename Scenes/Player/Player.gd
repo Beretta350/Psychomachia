@@ -34,6 +34,8 @@ var direction = Vector2(0,0)
 
 var is_on_wall : bool = false
 
+var checkpoint = null
+
 onready var arrow_cd_timer : Timer = $Timers/ArrowCoolDownTimer
 onready var hurt_area = $HurtArea/HurtBox
 onready var jump_timer : Timer = $Timers/JumpTimer
@@ -54,6 +56,7 @@ func _ready():
 	
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("enemies", "set_player", self)
+	get_tree().call_group("checkpoints", "set_player", self)
 	print(scene_name)
 	
 
@@ -146,7 +149,10 @@ func move():
 	for i in range(get_slide_count()):
 		var collision = get_slide_collision(i)
 		if(get_slide_collision(i).collider.get_name().find("Spikes")!= -1):
-			get_tree().reload_current_scene()
+			if checkpoint != null:
+				checkpoint.reset()
+			else:
+				get_tree().reload_current_scene()
 		
 		if collision.collider.has_method("collide_with"):
 			
@@ -206,14 +212,23 @@ func _on_PlatformTimer_timeout():
 
 
 func _on_LavaLake_body_entered(body):
+	if checkpoint != null:
+		checkpoint.reset()
+		return
 	get_tree().reload_current_scene()
 
 
 func _on_LavaLake2_body_entered(body):
+	if checkpoint != null:
+		checkpoint.reset()
+		return
 	get_tree().reload_current_scene()
 
 
 func _on_LavaLake3_body_entered(body):
+	if checkpoint != null:
+		checkpoint.reset()
+		return
 	get_tree().reload_current_scene()
 
 func _on_HurtArea_area_entered(area):

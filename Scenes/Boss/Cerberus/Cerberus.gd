@@ -8,6 +8,7 @@ onready var anim : AnimatedSprite = $AnimatedSprite
 var velocity = Vector2(150,0)
 var triggered = false
 var player = null
+var original_position = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +16,9 @@ func _ready():
 	
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("cerberus_trigger", "set_cerberus", self)
+	get_tree().call_group("checkpoints", "set_cerberus", self)
+	
+	original_position = global_position
 
 func _physics_process(delta):
 	if triggered and player!=null:
