@@ -26,4 +26,5 @@ func set_player(p):
 	
 func reset():
 	player.global_position = global_position
+	player.life = 100
 	cerberus.global_position = cerberus.original_position
