@@ -49,10 +49,6 @@ func _on_HitArea_body_entered(body):
 	if body.name == "Player":
 		animation.play("attack")
 		attacking = true
-		
-		
-	
-		
 func _on_HitArea_body_exited(body):
 	if body.name == "Player":
 		animation.play("idle")
