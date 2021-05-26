@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Limbo/dark_tiles.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Enimies/Companion/Companion.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/NPCs/Greek Sage/GreekSage.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1392,6 +1393,8 @@ drag_margin_left = 0.1
 drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
+
+[node name="HUD" parent="Player/Camera2D" instance=ExtResource( 12 )]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
