@@ -39,7 +39,6 @@ var checkpoint = null
 
 var life = 100
 onready var arrow_cd_timer : Timer = $Timers/ArrowCoolDownTimer
-onready var hurt_area = $HurtArea/HurtBox
 onready var jump_timer : Timer = $Timers/JumpTimer
 onready var floor_timer : Timer = $Timers/FloorTimer
 onready var ladder_timer : Timer = $Timers/LadderTimer
@@ -62,7 +61,6 @@ func _ready():
 	get_tree().call_group("enemies", "set_player", self)
 	get_tree().call_group("checkpoints", "set_player", self)
 	get_tree().call_group("HUD", "set_player", self)
-	print(scene_name)
 	
 
 func _physics_process(delta):
@@ -175,7 +173,7 @@ func apply_gravity (gravity:float):
 	velocity += Vector2.DOWN * gravity
 
 func play(animation:String):
-	if anim.current_animation == animation:
+	if anim.current_animation == animation or animation == "air":
 		return
 	anim.play(animation)
 
