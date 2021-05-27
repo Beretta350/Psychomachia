@@ -13,25 +13,73 @@
 			"text": "..."
 		},
 		{
-			"character": "",
+			"character": "character-1621534593.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "..."
 		},
 		{
-			"character": "",
+			"character": "character-1621534593.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "O gato comeu sua língua, foi?"
 		},
 		{
-			"character": "",
+			"character": "character-1621534584.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "Onde eu estou?"
 		},
 		{
-			"character": "",
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você não se lembra de nada? Não se assuste, é normal."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você não está mais na Terra. Aqui é o Limbo, para onde algumas pessoas vão depois de... você sabe..."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu... morri? "
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Nossa, você realmente não lembra de nada."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sim, nós morremos. Eu estava te esperando acordar, achei que eu estava sozinho aqui. Aí você apareceu..."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Quem é você? Ou melhor... o que é você?"
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Me chamo Kiri. Eu também não me lembro muito bem de nada, assim como você. Preciso procurar o meu corpo, cheguei aqui assim, nessa forma... Não sei o que aconteceu."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hum... Bom, eu preciso procurar alguém."
+		},
+		{
+			"character": "character-1621534584.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": ""

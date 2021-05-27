@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Suas pernas estão tremendo... Você não pode mais usar Pulo Duplo."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622083381.json",
+		"name": "doublejump"
+	}
+}
