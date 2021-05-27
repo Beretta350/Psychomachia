@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Wrath/parallax-demon-woods-far-trees.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Sounds/Levels/wrath.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Levels/heal.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1166.26, 62.5768 )
@@ -109,6 +110,9 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 1113.17, 59.263 )
 
+[sub_resource type="CapsuleShape2D" id=9]
+height = 315.171
+
 [node name="WrathTemplate" type="Node2D"]
 
 [node name="LavaLake" type="Area2D" parent="."]
@@ -207,5 +211,14 @@ position = Vector2( -955.988, 940.019 )
 shape = SubResource( 8 )
 script = ExtResource( 9 )
 
+[node name="PerdeHeal" type="Area2D" parent="."]
+position = Vector2( 2719.91, 463.601 )
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerdeHeal"]
+position = Vector2( 4.24268, -9.89951 )
+shape = SubResource( 9 )
+
 [connection signal="body_entered" from="LavaLake" to="Player" method="_on_LavaLake_body_entered"]
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]
+[connection signal="body_entered" from="PerdeHeal" to="PerdeHeal" method="_on_PerdeHeal_body_entered"]

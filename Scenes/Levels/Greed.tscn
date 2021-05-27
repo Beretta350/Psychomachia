@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/Scenario/Greed/decorative_obj.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Scenario/Greed/env_rock.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/Levels/greed.mp3" type="AudioStream" id=7]
-[ext_resource path="res://Scenes/Levels/heal.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Levels/climbing.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=10]
 
@@ -1146,11 +1146,11 @@ stream = ExtResource( 7 )
 volume_db = -24.0
 autoplay = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="perdeclimb" type="Area2D" parent="."]
 position = Vector2( 196.222, 57.373 )
 script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="perdeclimb"]
 shape = SubResource( 8 )
 
 [node name="Next_Scene" type="Area2D" parent="."]
@@ -1160,5 +1160,5 @@ position = Vector2( -2734.34, 2319.52 )
 shape = SubResource( 9 )
 script = ExtResource( 9 )
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="perdeclimb" to="perdeclimb" method="_on_perdeclimb_body_entered"]
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]

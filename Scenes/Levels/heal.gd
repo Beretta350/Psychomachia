@@ -24,7 +24,7 @@ func unpause(timeline_name):
 	get_tree().paused=false
 
 
-func _on_Area2D_body_entered(body):
+func _on_PerdeHeal_body_entered(body):
 	if body.name=="Player":
 		if check==false:
 			get_tree().paused=true
