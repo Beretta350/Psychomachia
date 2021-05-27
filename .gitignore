@@ -1,10 +1,8 @@
 .tmp
 .DS_Store
 project-icon.png
-project.godot
 test-scenes
 /.import
-/default_env.tres
 /icon.png
 *.import
 /.vscode
