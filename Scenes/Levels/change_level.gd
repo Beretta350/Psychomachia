@@ -31,13 +31,18 @@ func _on_Next_Scene_body_entered(body):
 func save_progress(next_level):
 	var level_file = File.new()
 	
-	if level_file.file_exists("res://save/max_level.dat"):
-		level_file.open("res://save/max_level.dat", File.READ)
+	var directory = Directory.new( )
+	if !directory.dir_exists("save"):
+		directory.open(OS.get_executable_path().get_base_dir())
+		directory.make_dir("save")
+	
+	if level_file.file_exists("save/max_level.dat"):
+		level_file.open("save/max_level.dat", File.READ)
 		if level_file.get_8() > next_level:
 			level_file.close()
 			return
 		level_file.close()
 	
-	level_file.open("res://save/max_level.dat", File.WRITE)
+	level_file.open("save/max_level.dat", File.WRITE)
 	level_file.store_8(next_level)
 	level_file.close()
