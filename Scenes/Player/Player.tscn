@@ -174,11 +174,11 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.61772, 15.3305 )
 
-[sub_resource type="CapsuleShape2D" id=14]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 12.1076
 height = 9.43944
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 139 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 136 ) ],
 "loop": true,
@@ -200,14 +200,9 @@ animations = [ {
 "name": "bow_atk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 10 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 18 ), ExtResource( 49 ) ],
+"frames": [ ExtResource( 153 ), ExtResource( 151 ), ExtResource( 170 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 154 ), ExtResource( 152 ) ],
 "loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 167 ), ExtResource( 166 ), ExtResource( 164 ), ExtResource( 165 ) ],
-"loop": true,
-"name": "climb",
+"name": "hurt",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 61 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 71 ), ExtResource( 73 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 66 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 74 ) ],
@@ -215,29 +210,33 @@ animations = [ {
 "name": "light_atk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 58 ), ExtResource( 42 ), ExtResource( 24 ), ExtResource( 16 ), ExtResource( 54 ), ExtResource( 37 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 32 ), ExtResource( 43 ), ExtResource( 57 ), ExtResource( 17 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 11 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 161 ), ExtResource( 160 ), ExtResource( 162 ), ExtResource( 163 ) ],
 "loop": true,
 "name": "dash",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 153 ), ExtResource( 151 ), ExtResource( 170 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 154 ), ExtResource( 152 ) ],
-"loop": true,
-"name": "hurt",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 105 ), ExtResource( 102 ), ExtResource( 94 ), ExtResource( 85 ), ExtResource( 103 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 111 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 81 ), ExtResource( 104 ), ExtResource( 112 ), ExtResource( 89 ), ExtResource( 77 ), ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 100 ), ExtResource( 92 ), ExtResource( 78 ), ExtResource( 93 ), ExtResource( 79 ), ExtResource( 106 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ) ],
 "loop": true,
 "name": "heavy_atk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 58 ), ExtResource( 42 ), ExtResource( 24 ), ExtResource( 16 ), ExtResource( 54 ), ExtResource( 37 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 32 ), ExtResource( 43 ), ExtResource( 57 ), ExtResource( 17 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 11 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 167 ), ExtResource( 166 ), ExtResource( 164 ), ExtResource( 165 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 10 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 18 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=3]
-resource_name = "bow_atk"
+[sub_resource type="Animation" id=4]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -289,7 +288,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -301,8 +300,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "climb"
+[sub_resource type="Animation" id=5]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -354,7 +352,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -366,8 +364,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "dash"
+[sub_resource type="Animation" id=6]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -419,7 +416,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -431,7 +428,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -482,7 +479,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -494,7 +491,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 3.9
 loop = true
 tracks/0/type = "value"
@@ -546,7 +543,7 @@ tracks/3/keys = {
 "values": [ true, true, false, false, true, true, false, false, true, true, false, false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -558,8 +555,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "hurt"
+[sub_resource type="Animation" id=9]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -611,7 +607,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -623,7 +619,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 1.7
 loop = true
 tracks/0/type = "value"
@@ -651,7 +647,7 @@ tracks/1/keys = {
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/2/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -687,7 +683,7 @@ tracks/4/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 1.6
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -738,7 +734,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -750,7 +746,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 2.2
 loop = true
 tracks/0/type = "value"
@@ -802,7 +798,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -814,7 +810,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -866,7 +862,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -878,7 +874,7 @@ tracks/4/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 length = 2.3
 loop = true
 tracks/0/type = "value"
@@ -930,7 +926,7 @@ tracks/3/keys = {
 "values": [ true, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HurtArea/HurtBox:disabled")
+tracks/4/path = NodePath("../PlayerHurtArea/PlayerHurtBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1049,36 +1045,36 @@ explosiveness = 0.0
 z_index = 100
 shape = SubResource( 1 )
 
-[node name="HurtArea" type="Area2D" parent="."]
+[node name="PlayerHurtArea" type="Area2D" parent="."]
 collision_layer = 1025
 collision_mask = 33793
 
-[node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]
+[node name="PlayerHurtBox" type="CollisionShape2D" parent="PlayerHurtArea"]
 z_index = 100
-shape = SubResource( 14 )
+shape = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, -15 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "hurt"
 frame = 6
 speed_scale = 1.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
 playback_speed = 1.5
-anims/bow_atk = SubResource( 3 )
-anims/climb = SubResource( 4 )
-anims/dash = SubResource( 5 )
-anims/heal = SubResource( 6 )
-anims/heavy_atk = SubResource( 7 )
-anims/hurt = SubResource( 8 )
-anims/idle = SubResource( 9 )
-anims/jump = SubResource( 10 )
-anims/light_atk = SubResource( 11 )
-anims/slide = SubResource( 12 )
-anims/walk = SubResource( 13 )
+anims/bow_atk = SubResource( 4 )
+anims/climb = SubResource( 5 )
+anims/dash = SubResource( 6 )
+anims/heal = SubResource( 7 )
+anims/heavy_atk = SubResource( 8 )
+anims/hurt = SubResource( 9 )
+anims/idle = SubResource( 10 )
+anims/jump = SubResource( 11 )
+anims/light_atk = SubResource( 12 )
+anims/slide = SubResource( 13 )
+anims/walk = SubResource( 14 )
 
 [node name="Body" type="Node2D" parent="."]
 
@@ -1097,6 +1093,6 @@ shape = SubResource( 16 )
 disabled = true
 
 [connection signal="timeout" from="Timers/PlatformTimer" to="." method="_on_PlatformTimer_timeout"]
-[connection signal="area_entered" from="HurtArea" to="." method="_on_HurtArea_area_entered"]
-[connection signal="area_exited" from="HurtArea" to="." method="_on_HurtArea_area_exited"]
+[connection signal="area_entered" from="PlayerHurtArea" to="." method="_on_HurtArea_area_entered"]
+[connection signal="area_exited" from="PlayerHurtArea" to="." method="_on_HurtArea_area_exited"]
 [connection signal="animation_finished" from="AnimatedSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

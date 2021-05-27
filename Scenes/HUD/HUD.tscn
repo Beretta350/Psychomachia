@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/HUD/LifeBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HUD/knife.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/HUD/bow.png" type="Texture" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends CanvasLayer
 
 onready var life_bar = $LifeBar/TextureProgress
+onready var knife = $Knife
+onready var bow = $Bow
 onready var death_message = $DeathMessage
 
 var player = null
@@ -23,7 +27,12 @@ func _process(delta):
 				death_message.visible = false
 				get_tree().paused = false
 				player.respawn()
-				
+		if player.bow_equip:
+			bow.show()
+			knife.hide()
+		else:
+			bow.hide()
+			knife.show()
 	else:
 		life_bar.value = 100
 
@@ -69,6 +78,24 @@ margin_right = 1123.71
 margin_bottom = 370.427
 custom_fonts/font = SubResource( 4 )
 text = "Você Morreu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knife" type="TextureRect" parent="."]
+margin_top = 50.0
+margin_right = 60.0
+margin_bottom = 110.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bow" type="TextureRect" parent="."]
+margin_top = 50.0
+margin_right = 60.0
+margin_bottom = 110.0
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
