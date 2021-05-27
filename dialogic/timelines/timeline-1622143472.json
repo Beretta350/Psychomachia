@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ugh... Espero que isso seja só água."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você está ouvindo esse barulho? Parece uma ventania forte... "
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sim, também percebi. Vamos com cuidado, talvez o que procuramos esteja logo na frente."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622143472.json",
+		"name": "lustintro"
+	}
+}
