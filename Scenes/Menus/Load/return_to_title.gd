@@ -6,16 +6,21 @@ var level_reached = 0
 func _ready():
 	$SaveList/Save0.grab_focus()
 	
+	var directory = Directory.new( )
+	if !directory.dir_exists("save"):
+		directory.open(OS.get_executable_path().get_base_dir())
+		directory.make_dir("save")
+	
 	var level_file = File.new()
 	
-	if !level_file.file_exists("res://save/max_level.dat"):
+	if !level_file.file_exists("save/max_level.dat"):
 		print("creating file")
-		level_file.open("res://save/max_level.dat", File.WRITE)
+		level_file.open("save/max_level.dat", File.WRITE)
 		level_file.store_8(level_reached)
 		level_file.close()
 	
 	
-	level_file.open("res://save/max_level.dat", File.READ)
+	level_file.open("save/max_level.dat", File.READ)
 	level_reached = level_file.get_8()
 	level_file.close()
 	
