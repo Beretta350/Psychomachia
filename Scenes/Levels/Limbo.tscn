@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Limbo/dark_tiles.png" type="Texture" id=2]
@@ -46,6 +46,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
+[sub_resource type="ConvexPolygonShape2D" id=40]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
 [sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
@@ -76,7 +79,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=18]
 points = PoolVector2Array( 8, 16, 0, 16, 0, 0, 8, 0 )
 
+[sub_resource type="ConvexPolygonShape2D" id=41]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
 [sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=42]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=43]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
@@ -410,9 +422,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 17/navigation_offset = Vector2( 0, 0 )
 17/shape_offset = Vector2( 0, 0 )
 17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape = SubResource( 40 )
 17/shape_one_way = false
-17/shape_one_way_margin = 0.0
-17/shapes = [  ]
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 40 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 17/z_index = 0
 19/name = "decorative_obj.png 19"
 19/texture = ExtResource( 6 )
@@ -622,9 +641,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 29/navigation_offset = Vector2( 0, 0 )
 29/shape_offset = Vector2( 0, 0 )
 29/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+29/shape = SubResource( 41 )
 29/shape_one_way = false
-29/shape_one_way_margin = 0.0
-29/shapes = [  ]
+29/shape_one_way_margin = 1.0
+29/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 41 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 29/z_index = 0
 30/name = "plataform.png 1"
 30/texture = ExtResource( 6 )
@@ -636,9 +662,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 30/navigation_offset = Vector2( 0, 0 )
 30/shape_offset = Vector2( 0, 0 )
 30/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+30/shape = SubResource( 42 )
 30/shape_one_way = false
-30/shape_one_way_margin = 0.0
-30/shapes = [  ]
+30/shape_one_way_margin = 1.0
+30/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 42 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 30/z_index = 0
 31/name = "plataform.png 2"
 31/texture = ExtResource( 6 )
@@ -650,9 +683,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 31/navigation_offset = Vector2( 0, 0 )
 31/shape_offset = Vector2( 0, 0 )
 31/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+31/shape = SubResource( 43 )
 31/shape_one_way = false
-31/shape_one_way_margin = 0.0
-31/shapes = [  ]
+31/shape_one_way_margin = 1.0
+31/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 43 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 31/z_index = 0
 32/name = "left_side_stone_plate.png"
 32/texture = ExtResource( 5 )
@@ -1373,6 +1413,9 @@ extents = Vector2( 87.6591, 10 )
 [sub_resource type="CapsuleShape2D" id=39]
 height = 237.21
 
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 755.802, 60.9061 )
+
 [node name="LimboTemplate" type="Node2D"]
 
 [node name="Base TM" type="TileMap" parent="."]
@@ -1403,7 +1446,7 @@ format = 1
 tile_data = PoolIntArray( 327721, 8, 0, 327722, 7, 0, 327723, 7, 0, 327724, 7, 0, 327725, 7, 0, 327726, 7, 0, 327727, 7, 0, 327728, 9, 0, 327747, 8, 0, 327748, 7, 0, 327749, 7, 0, 327750, 7, 0, 327751, 7, 0, 327755, 7, 0, 327756, 7, 0, 327757, 7, 0, 327758, 7, 0, 327759, 9, 0, 393258, 6, 0, 393260, 6, 0, 393262, 6, 0, 393284, 6, 0, 393286, 6, 0, 393291, 6, 0, 393292, 6, 0, 393293, 6, 0, 393294, 6, 0, 1835045, -1073741796, 0, 1835046, 1073741834, 0, 1900581, -1073741796, 0, 1966117, -1073741796, 0, 2031653, -1073741796, 0, 2097189, -1073741796, 0, 2162725, -1073741796, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 218.558, 243.647 )
+position = Vector2( 2750, 30 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -50, -30 )
@@ -1522,11 +1565,17 @@ script = ExtResource( 19 )
 position = Vector2( 9.58096, -21.6891 )
 shape = SubResource( 39 )
 
-[node name="FireWizardEnemy" parent="." instance=ExtResource( 20 )]
-position = Vector2( 1105.46, 381.481 )
-
 [node name="RedSlimeEnemy" parent="." instance=ExtResource( 21 )]
 position = Vector2( 737.568, 256.754 )
+
+[node name="FireWizardEnemy" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1103, 377 )
+
+[node name="LavaLake" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LavaLake"]
+position = Vector2( 1142.67, 644.293 )
+shape = SubResource( 44 )
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]
@@ -1536,3 +1585,4 @@ position = Vector2( 737.568, 256.754 )
 [connection signal="body_entered" from="TutorialCombat" to="TutorialCombat" method="_on_TutorialCombat_body_entered"]
 [connection signal="body_entered" from="TutorialCombat2" to="TutorialCombat2" method="_on_TutorialCombat2_body_entered"]
 [connection signal="body_entered" from="endlimbo" to="endlimbo" method="_on_endlimbo_body_entered"]
+[connection signal="body_entered" from="LavaLake" to="Player" method="_on_LavaLake_body_entered"]
