@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Fraud/Background/background1.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Sounds/Levels/fraud.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Levels/perdeatkfraco.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Levels/Puzzle.gd" type="Script" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -921,6 +922,9 @@ extents = Vector2( 12.9317, 433.112 )
 [sub_resource type="CapsuleShape2D" id=51]
 height = 215.786
 
+[sub_resource type="CapsuleShape2D" id=52]
+height = 355.766
+
 [node name="FraudTemplate" type="Node2D"]
 
 [node name="Base TM" type="TileMap" parent="."]
@@ -1029,4 +1033,13 @@ script = ExtResource( 13 )
 position = Vector2( 33.8541, -1.7818 )
 shape = SubResource( 51 )
 
+[node name="Puzzle" type="Area2D" parent="."]
+position = Vector2( 425.678, 422.85 )
+script = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle"]
+position = Vector2( -70.7106, 14.1422 )
+shape = SubResource( 52 )
+
 [connection signal="body_entered" from="perdeatkfraco" to="perdeatkfraco" method="_on_perdeatkfraco_body_entered"]
+[connection signal="body_entered" from="Puzzle" to="Puzzle" method="_on_Puzzle_body_entered"]
