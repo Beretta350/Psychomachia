@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fire_breath.mp3-d2c70de71bd0ca8ffff6119798255077.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/fire_demon/fire_breath.mp3"
+dest_files=[ "res://.import/fire_breath.mp3-d2c70de71bd0ca8ffff6119798255077.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

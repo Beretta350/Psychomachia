@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/slime_jump.mp3-c8040bd1367015c988288fff8e18c31a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/slime/slime_jump.mp3"
+dest_files=[ "res://.import/slime_jump.mp3-c8040bd1367015c988288fff8e18c31a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

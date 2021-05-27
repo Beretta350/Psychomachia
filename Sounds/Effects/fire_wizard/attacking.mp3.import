@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/attacking.mp3-2de97d7c626cf5d38940d3dc53e43ed8.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/fire_wizard/attacking.mp3"
+dest_files=[ "res://.import/attacking.mp3-2de97d7c626cf5d38940d3dc53e43ed8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

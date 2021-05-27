@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/death_explosion.mp3-8d505a4f3db806ca4480425cb743c9c8.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/fire_ghoul/death_explosion.mp3"
+dest_files=[ "res://.import/death_explosion.mp3-8d505a4f3db806ca4480425cb743c9c8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

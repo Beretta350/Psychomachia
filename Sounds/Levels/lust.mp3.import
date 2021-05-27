@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lust.mp3-5a7f91b8e3460aea1d4fbd6278da2765.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Levels/lust.mp3"
+dest_files=[ "res://.import/lust.mp3-5a7f91b8e3460aea1d4fbd6278da2765.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

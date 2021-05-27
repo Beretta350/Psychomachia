@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/limbo.mp3-cb71d5822bf2f31ada955e3498e852dc.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Levels/limbo.mp3"
+dest_files=[ "res://.import/limbo.mp3-cb71d5822bf2f31ada955e3498e852dc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

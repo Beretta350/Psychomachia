@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gluttony.mp3-143de0bbbd46a2c9fe70ee3c3caa3376.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Levels/gluttony.mp3"
+dest_files=[ "res://.import/gluttony.mp3-143de0bbbd46a2c9fe70ee3c3caa3376.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

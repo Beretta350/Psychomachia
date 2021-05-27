@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/walk.mp3-2a8b1461bdd58d8c0ef6c2e22c97993e.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/fire_ghoul/walk.mp3"
+dest_files=[ "res://.import/walk.mp3-2a8b1461bdd58d8c0ef6c2e22c97993e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

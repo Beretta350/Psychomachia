@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/wrath.mp3-09bf77592e89b8640fc1d06a915f3015.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Levels/wrath.mp3"
+dest_files=[ "res://.import/wrath.mp3-09bf77592e89b8640fc1d06a915f3015.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

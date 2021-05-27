@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/heresy.mp3-5b3c8f2fb792261bb73ba818afeef397.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Levels/heresy.mp3"
+dest_files=[ "res://.import/heresy.mp3-5b3c8f2fb792261bb73ba818afeef397.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

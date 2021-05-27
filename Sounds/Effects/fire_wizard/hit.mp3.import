@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hit.mp3-64b5f28c047f63fb83b3af1cb6cf5d9a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/fire_wizard/hit.mp3"
+dest_files=[ "res://.import/hit.mp3-64b5f28c047f63fb83b3af1cb6cf5d9a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

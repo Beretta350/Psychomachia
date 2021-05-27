@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/attack.mp3-ed1d7abe2e4ffc094c9f9a7e676730d3.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/lust/attack.mp3"
+dest_files=[ "res://.import/attack.mp3-ed1d7abe2e4ffc094c9f9a7e676730d3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

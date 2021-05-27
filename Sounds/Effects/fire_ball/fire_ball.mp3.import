@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fire_ball.mp3-369db69eb1133cfaa01e0b4e2103451d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/fire_ball/fire_ball.mp3"
+dest_files=[ "res://.import/fire_ball.mp3-369db69eb1133cfaa01e0b4e2103451d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

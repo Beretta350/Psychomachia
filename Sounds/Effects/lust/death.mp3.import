@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/death.mp3-7bc66edf25f6f44c21077b941c06461a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/lust/death.mp3"
+dest_files=[ "res://.import/death.mp3-7bc66edf25f6f44c21077b941c06461a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/death_explosion.mp3-b5d8958c05fc356e5da7dc446d530810.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/fire_wizard/death_explosion.mp3"
+dest_files=[ "res://.import/death_explosion.mp3-b5d8958c05fc356e5da7dc446d530810.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

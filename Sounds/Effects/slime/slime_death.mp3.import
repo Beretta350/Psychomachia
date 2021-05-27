@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/slime_death.mp3-4e44f25d734b97281e05b807b8135978.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/slime/slime_death.mp3"
+dest_files=[ "res://.import/slime_death.mp3-4e44f25d734b97281e05b807b8135978.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
