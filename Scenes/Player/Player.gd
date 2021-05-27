@@ -51,6 +51,7 @@ onready var state_machine: PlayerFSM = $PlayerStates
 onready var tween : Tween = $Tween
 onready var waves : Particles2D = $Waves
 onready var invecible_timer = $Timers/InvencibleTimer
+onready var healing_timer = $Timers/HealingTimer
 export onready var scene_name=get_tree().get_current_scene().get_name()
 
 func _ready():
@@ -127,8 +128,11 @@ func update_inputs():
 	else:
 		slide=false
 		
-	if(Input.is_action_pressed("heal") && (scene_name=="LimboTemplate" || scene_name=="LustTemplate" || scene_name=="GluttonyTemplate" || scene_name=="Greed")):
-		heal = true
+	if(Input.is_action_pressed("heal") && healing_timer.is_stopped() &&(scene_name=="LimboTemplate" || scene_name=="LustTemplate" || scene_name=="GluttonyTemplate" || scene_name=="Greed")):
+		if life < 100:
+			heal = true
+			life += 20
+			healing_timer.start()
 	else: 
 		heal=false
 		
