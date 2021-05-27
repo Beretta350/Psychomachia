@@ -1,0 +1,77 @@
+{
+	"events": [
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ora, o que eu vejo aqui... Não costumo ter visitantes nesse reino. Eu sou o Malacoda, demônio líder do Círculo da Fraude."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "As almas que mentem e enganam deliberadamente, cientes do mau que praticam, são torturadas por mim."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu vejo em você muitos pecados... Orgulho, ira, violência, ganância, sede por poder... Mas não corrupção. Diga-me, humana, o que te traz aqui?"
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Demônio, eu não desejo lutar. Estou apenas de passagem. Procuro alguém importante pra mim. Me deixe passar, por favor."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você terá sua passagem livre, se responder corretamente os 3 enigmas da Fraude. Cada pergunta tem apenas uma resposta correta. Acerte os 3, e deixarei você passar. Erre algum, e ficará aqui para toda a eternidade."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Lain, isso é uma má idéia... Vamos embora..."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Você está pronta?"
+		},
+		{
+			"choice": "Sim",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Não",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você nunca teve uma opção, de qualquer forma... Vamos para o primeiro enigma."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622084852.json",
+		"name": "gamemaster"
+	}
+}

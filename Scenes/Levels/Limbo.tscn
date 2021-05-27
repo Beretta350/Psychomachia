@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Limbo/dark_tiles.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Scenes/Levels/TutorialCombat.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Enimies/Slimes/Blue/BlueSlime.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Levels/TutorialCombat2.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Levels/endlimbo.gd" type="Script" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1367,6 +1368,9 @@ extents = Vector2( 308.03, 10 )
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 87.6591, 10 )
 
+[sub_resource type="CapsuleShape2D" id=39]
+height = 237.21
+
 [node name="LimboTemplate" type="Node2D"]
 
 [node name="Base TM" type="TileMap" parent="."]
@@ -1508,6 +1512,13 @@ script = ExtResource( 18 )
 position = Vector2( 21.1892, 11.6541 )
 shape = SubResource( 38 )
 
+[node name="endlimbo" type="Area2D" parent="."]
+position = Vector2( 133.492, 186.466 )
+script = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="endlimbo"]
+shape = SubResource( 39 )
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]
 [connection signal="body_entered" from="TutorialClimb" to="TutorialClimb" method="_on_TutorialClimb_body_entered"]
@@ -1515,3 +1526,4 @@ shape = SubResource( 38 )
 [connection signal="body_entered" from="TutorialDash" to="TutorialDash" method="_on_TutorialDash_body_entered"]
 [connection signal="body_entered" from="TutorialCombat" to="TutorialCombat" method="_on_TutorialCombat_body_entered"]
 [connection signal="body_entered" from="TutorialCombat2" to="TutorialCombat2" method="_on_TutorialCombat2_body_entered"]
+[connection signal="body_entered" from="endlimbo" to="endlimbo" method="_on_endlimbo_body_entered"]

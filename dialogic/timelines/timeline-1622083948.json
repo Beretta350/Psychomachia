@@ -1,0 +1,21 @@
+{
+	"events": [
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Não temos mais pra onde ir..."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": ""
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622083948.json",
+		"name": "endlimbo"
+	}
+}
