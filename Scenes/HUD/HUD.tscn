@@ -83,8 +83,9 @@ __meta__ = {
 }
 
 [node name="Knife" type="TextureRect" parent="."]
+margin_left = 2.0
 margin_top = 50.0
-margin_right = 60.0
+margin_right = 62.0
 margin_bottom = 110.0
 texture = ExtResource( 2 )
 __meta__ = {
