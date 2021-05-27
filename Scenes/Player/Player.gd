@@ -29,6 +29,7 @@ var climbing : bool = false
 var dashing : bool = false
 var was_hited : bool = false
 var hurt_box_excited : bool = false
+var dead = false
 
 var direction = Vector2(0,0)
 
@@ -188,6 +189,11 @@ func can_climb():
 	return ladder_area and ladder_timer.is_stopped()
 
 func death():
+	dead = true
+	get_tree().paused = true
+
+func respawn():
+	dead = false
 	if checkpoint != null:
 		checkpoint.reset()
 		return
