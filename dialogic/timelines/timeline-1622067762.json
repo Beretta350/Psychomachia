@@ -1,7 +1,7 @@
 {
 	"events": [
 		{
-			"character": "",
+			"character": "character-1621534593.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Aperte \"2\" para trocar para o arco. Ataque com o arco clicando com o botão esquerdo do mouse."

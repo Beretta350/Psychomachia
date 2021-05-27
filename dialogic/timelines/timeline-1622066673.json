@@ -1,10 +1,10 @@
 {
 	"events": [
 		{
-			"character": "",
+			"character": "character-1621534593.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Aperte \"Espaço\" duas vezes para um pulo duplo."
+			"text": "Aperte \"Espaço\" duas vezes para um pulo duplo!"
 		}
 	],
 	"metadata": {

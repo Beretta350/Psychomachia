@@ -1,10 +1,10 @@
 {
 	"events": [
 		{
-			"character": "",
+			"character": "character-1621534593.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Clique com o botão esquerdo do mouse para um ataque básico com a espada, e botão direito para um ataque forte. Você pode apertar \"H\" para se curar."
+			"text": "Você pode com o botão esquerdo do mouse para um ataque básico com a espada, e botão direito para um ataque forte. Você pode apertar \"H\" para se curar."
 		}
 	],
 	"metadata": {

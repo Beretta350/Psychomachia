@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Heresy/Background.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Boss/FireDemon/InvisibleWall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Levels/PerdeAtkForte.gd" type="Script" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -891,6 +892,9 @@ extents = Vector2( 301.694, 88.884 )
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 528.646, 37.8616 )
 
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 10, 234.645 )
+
 [node name="HeresyTemplate" type="Node2D"]
 
 [node name="Base TM" type="TileMap" parent="."]
@@ -1005,7 +1009,16 @@ script = ExtResource( 10 )
 position = Vector2( 118.021, -39.5045 )
 scale = Vector2( 1, 20 )
 
+[node name="PerdeAtkForte" type="Area2D" parent="."]
+position = Vector2( 2507.61, 453.554 )
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerdeAtkForte"]
+position = Vector2( 44.0496, -32.0362 )
+shape = SubResource( 47 )
+
 [connection signal="body_entered" from="LavaLake" to="Player" method="_on_LavaLake_body_entered"]
 [connection signal="body_entered" from="LavaLake2" to="Player" method="_on_LavaLake2_body_entered"]
 [connection signal="body_entered" from="LavaLake3" to="Player" method="_on_LavaLake3_body_entered"]
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]
+[connection signal="body_entered" from="PerdeAtkForte" to="PerdeAtkForte" method="_on_PerdeAtkForte_body_entered"]
