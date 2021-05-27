@@ -2,9 +2,7 @@
 .DS_Store
 project-icon.png
 test-scenes
-/.import
 /icon.png
-*.import
 /.vscode
 /previous
 export_presets.cfg
