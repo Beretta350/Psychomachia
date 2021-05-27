@@ -67,6 +67,243 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Você nunca teve uma opção, de qualquer forma... Vamos para o primeiro enigma."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "São cenas de loucura, tristeza, alegria, confusão e estranheza, que aparecem nas horas escuras da noite. Ao aparecer são lógicos, mas ao relembrar são estranhos e bizarros. Os humanos tem, e os demônios almejam. O que eu sou?"
+		},
+		{
+			"choice": "Sonhos",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Sonhos",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Sonhos",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Há muito tempo atrás, existiu um anjo, o que mais se destacava dentre todos eles, o mais brilhante. Esse anjo, ao saber que Deus se uniria à natureza humana, revoltou-se, negando a autoridade de seu pai.  "
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Afetado pelo orgulho, ele não teria suportado a ideia de ter que adorar o outro filho de seu pai, porque ele seria um humano e, portanto, inferior a si. Sentiu-se desprezado e sobrepujado. "
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ele foi expulso do céu e condenado à viver a eternidade liderando o inferno, como o primeiro demônio. Ele nunca conseguiu entender como aquelas criaturas desprezíveis poderiam ter o amor de seu pai, e ele não. "
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ele, um ser perfeito, e os humanos, cheios de defeitos, pecados, vícios... "
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Esse anjo se dedicou a torturar humanos por toda a eternidade. Ele criou os Círculos do Inferno, pensou em cada pecado, e em maneiras de destruir as almas daqueles que passavam por aqui. "
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A criatividade infernal nunca era pequena para pensar em novas maneiras de torturar e aniquilar os irmãos que ele tanto odiava."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Mas anos após anos, torturas após torturas, esses humanos nunca deixam de sonhar. Nunca deixam de pensar que sairão daqui. Nunca perdem os vínculos com o outro mundo."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Nós, demônios, não somos capazes de sonhar. Você sabia disso?"
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Quem é ele, esse líder do Inferno? Essa pessoa sabe quem passou por todos os Círculos? Eu preciso encontrar uma pessoa, talvez ele possa me ajudar."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Isso tudo não passa de uma lenda. Malacoda, nós acertamos sua pergunta. Você pode nos deixar passar?"
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu disse 3, não é mesmo? Vamos para o próximo enigma..."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "O que o homem ama mais do que a vida, teme mais do que a morte ou a luta mortal. O que os pobres têm, os ricos querem, o que os homens satisfeitos desejam, que o avarento gasta e o perdulário guarda.  O que todos os homens carregam para seus túmulos?"
+		},
+		{
+			"choice": "Nada",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Nada",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Nada",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Não importava o quanto ele tentasse, milênios de tortura, ele não conseguia quebrar aquelas almas. Aqueles humanos, tão desprezíveis, tão pequenos, tão falhos, nunca perdiam a sua determinação. Nunca perdiam os seus sonhos."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ele buscava entender a natureza humana, o que fazia com que esses sonhos, essa determinação, fossem tão difíceis de quebrar."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Nada, nada, nada, ele repetia. Não existia uma resposta. Seu propósito, destruir a humanidade, cada vez mais distante. "
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "E então ano após ano, ele se perdeu. Perdeu sua essência, a sua materialidade. Seu senso, sua sanidade, seu corpo. "
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Quem é ele? Onde posso encontrá-lo? Por favor, Malacoda, me ajude!"
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você o encontrará em breve, humana. Vamos para o seu próximo enigma..."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Minha verdadeira identidade está logo ao seu lado, mas você não vai me notar aí. Assim que eu te contar minha verdadeira identidade, você está morta. Quem sou eu?"
+		},
+		{
+			"choice": "Traidor",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Traidor",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Traidor",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Humana, eu nunca pretendi te deixar sair daqui."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Talvez você já tenha encontrado o que você procura."
+		},
+		{
+			"character": "character-1622085487.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu gosto mesmo da sua companhia..."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Lain, eu te falei que jogar com esse cara era uma má idéia. Nós vamos ter que lutar."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Meu corpo... Eu não aguento mais, eu não consigo lutar."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Estamos não perto. Não perca a sua determinação."
 		}
 	],
 	"metadata": {
