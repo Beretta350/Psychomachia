@@ -12,6 +12,8 @@ var direction = 1
 var life = 100
 
 onready var lavaBallCD : Timer = $LavaBallCD
+onready var hit_sound = $Body/Animation/Hit
+onready var start_atk_sound = $Body/Animation/StartAttack
 
 var plLavaball := preload("res://Scenes/Enimies/FireWizard/lavaball.tscn")
 
@@ -51,6 +53,7 @@ func set_player(p):
 func _on_HitArea_body_entered(body):
 	if body.name == "Player":
 		animations.play("attack")
+		start_atk_sound.play()
 		attacking = true
 
 func _on_HitArea_body_exited(body):
@@ -60,8 +63,10 @@ func _on_HitArea_body_exited(body):
 
 func _on_HurtArea_area_entered(area):
 	if "PlayerLightDamage" in area.name:
+		hit_sound.play()
 		life -= 30
 	elif "PlayerHeavyDamage" in area.name:
+		hit_sound.play()
 		life -= 50
 
 func _on_AnimationPlayer_animation_finished(anim_name):
