@@ -1,6 +1,7 @@
 extends Area2D
 
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -22,6 +23,7 @@ func _ready():
 	
 func unpause(timeline_name):
 	get_tree().paused=false
+	#body.horizontal+=100
 
 
 func _on_endlimbo_body_entered(body):
@@ -31,6 +33,6 @@ func _on_endlimbo_body_entered(body):
 			var dialog = Dialogic.start('endlimbo')	
 			dialog.pause_mode = Node.PAUSE_MODE_PROCESS
 			dialog.connect('timeline_end', self, 'unpause')
-			add_child(dialog)
+			add_child(dialog)			
 			check=true
 	

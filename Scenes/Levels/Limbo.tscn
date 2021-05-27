@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Limbo/dark_tiles.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://Scenes/Enimies/Slimes/Blue/BlueSlime.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Levels/TutorialCombat2.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Levels/endlimbo.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Enimies/FireWizard/FireWizard.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Enimies/Slimes/Red/RedSlime.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1354,7 +1356,7 @@ radius = 190.763
 extents = Vector2( 381.414, 30.9584 )
 
 [sub_resource type="CapsuleShape2D" id=34]
-height = 159.518
+height = 375.83
 
 [sub_resource type="CapsuleShape2D" id=35]
 height = 154.23
@@ -1401,7 +1403,7 @@ format = 1
 tile_data = PoolIntArray( 327721, 8, 0, 327722, 7, 0, 327723, 7, 0, 327724, 7, 0, 327725, 7, 0, 327726, 7, 0, 327727, 7, 0, 327728, 9, 0, 327747, 8, 0, 327748, 7, 0, 327749, 7, 0, 327750, 7, 0, 327751, 7, 0, 327755, 7, 0, 327756, 7, 0, 327757, 7, 0, 327758, 7, 0, 327759, 9, 0, 393258, 6, 0, 393260, 6, 0, 393262, 6, 0, 393284, 6, 0, 393286, 6, 0, 393291, 6, 0, 393292, 6, 0, 393293, 6, 0, 393294, 6, 0, 1835045, -1073741796, 0, 1835046, 1073741834, 0, 1900581, -1073741796, 0, 1966117, -1073741796, 0, 2031653, -1073741796, 0, 2097189, -1073741796, 0, 2162725, -1073741796, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2750, 40 )
+position = Vector2( 218.558, 243.647 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -50, -30 )
@@ -1474,7 +1476,7 @@ position = Vector2( 577.814, 515.905 )
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialClimb"]
-position = Vector2( 15.874, 0 )
+position = Vector2( -1.94399, -119.38 )
 shape = SubResource( 34 )
 
 [node name="TutorialDoubleJump" type="Area2D" parent="."]
@@ -1517,7 +1519,14 @@ position = Vector2( 133.492, 186.466 )
 script = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="endlimbo"]
+position = Vector2( 9.58096, -21.6891 )
 shape = SubResource( 39 )
+
+[node name="FireWizardEnemy" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1105.46, 381.481 )
+
+[node name="RedSlimeEnemy" parent="." instance=ExtResource( 21 )]
+position = Vector2( 737.568, 256.754 )
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]

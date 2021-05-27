@@ -76,13 +76,13 @@
 			"character": "character-1621534584.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hum... Bom, eu preciso procurar alguém."
+			"text": "Você disse que chegou aqui antes de mim... Por acaso tinha uma pessoa comigo? Pra onde ela foi?"
 		},
 		{
-			"character": "character-1621534584.json",
+			"character": "character-1621534593.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "Você estava sozinha... quem sabe procuramos um pouco mais pra frente? "
 		}
 	],
 	"metadata": {

@@ -4,13 +4,55 @@
 			"character": "character-1621534584.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Não temos mais pra onde ir..."
+			"text": "Droga, exploramos tudo e não encontramos nada... Será que perdemos alguma entrada?"
 		},
 		{
 			"character": "character-1621534593.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "Bom, tem um lugar que não fomos ainda... Você tá ouvindo isso? Parece que tem alguma coisa lá embaixo..."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ugh... parecem gritos... senti calafrios. Vamos voltar, talvez tenha algo a mais no castelo."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Lain, não tem nada mais lá, nós temos que descer."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ficou doido? Nós morreríamos com certeza, não enxergamos nem o fundo, nem onde isso dá."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A gente já morreu, não temos muito o que perder, não é mesmo?"
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ugh... Você tem razão. "
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Vamos!"
 		}
 	],
 	"metadata": {
