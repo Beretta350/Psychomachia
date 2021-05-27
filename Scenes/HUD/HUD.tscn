@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/HUD/LifeBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/HUD/knife.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/HUD/bow.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Menus/Main/FadeIn.gd" type="Script" id=5]
+[ext_resource path="res://Fonts/AngerStyles-ywXKY.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends CanvasLayer
@@ -11,14 +13,26 @@ onready var life_bar = $LifeBar/TextureProgress
 onready var knife = $Knife
 onready var bow = $Bow
 onready var death_message = $DeathMessage
+onready var pause_menu = $PauseMenu
 
 var player = null
+var pause = false
 
 func _ready():
 	death_message.visible = false
+	pause_menu.visible = false
 	add_to_group(\"HUD\")
 
 func _process(delta):
+	if(Input.is_action_just_pressed(\"ui_cancel\")) and !get_tree().paused and !pause:
+		pause_menu.visible = true
+		get_tree().paused = true
+		pause = true
+		$PauseMenu/Continue.grab_focus()
+	elif(Input.is_action_just_pressed(\"ui_cancel\")) and get_tree().paused and pause:
+		pause = false
+		pause_menu.visible = false
+		get_tree().paused = false
 	if player != null:
 		life_bar.value = player.life
 		if player.dead:
@@ -38,6 +52,22 @@ func _process(delta):
 
 func set_player(p):
 	player = p
+
+
+func _on_Continue_pressed():
+	pause = false
+	get_tree().paused = false
+	pause_menu.visible = false
+
+
+func _on_Exit_pressed():
+	$FadeIn.show()
+	$FadeIn.fade_in()
+
+
+func _on_FadeIn_fade_finished():
+	get_tree().paused = false
+	get_tree().change_scene(\"res://Scenes/Menus/Main/Menu.tscn\")
 "
 
 [sub_resource type="GDScript" id=2]
@@ -61,6 +91,56 @@ font_path = "res://Fonts/AngerStyles-ywXKY.ttf"
 [sub_resource type="DynamicFont" id=4]
 size = 100
 font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0 )
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.498039, 0.0666667, 0.0666667, 1 )
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Button
+
+export(String) var scene_to_load
+"
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.498039, 0.0666667, 0.0666667, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=11]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="HUD" type="CanvasLayer"]
 pause_mode = 2
@@ -100,3 +180,92 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PauseMenu" type="VBoxContainer" parent="."]
+margin_left = 471.719
+margin_top = 303.039
+margin_right = 1255.72
+margin_bottom = 621.039
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PauseMenu"]
+margin_right = 784.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 5 )
+text = "Pause"
+align = 1
+
+[node name="Continue" type="Button" parent="PauseMenu"]
+margin_top = 178.0
+margin_right = 784.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 360, 60 )
+mouse_default_cursor_shape = 2
+custom_styles/focus = SubResource( 6 )
+flat = true
+script = SubResource( 7 )
+
+[node name="ContinueLabel" type="Label" parent="PauseMenu/Continue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color_shadow = Color( 0.498039, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Continuar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="PauseMenu"]
+margin_top = 288.0
+margin_right = 784.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 360, 60 )
+mouse_default_cursor_shape = 2
+custom_styles/focus = SubResource( 9 )
+flat = true
+script = SubResource( 7 )
+
+[node name="ExitLabel" type="Label" parent="PauseMenu/Exit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color_shadow = Color( 0.498039, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Sair"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeIn" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1976.0
+margin_bottom = 2400.0
+color = Color( 0, 0, 0, 0 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeIn"]
+anims/fade_in = SubResource( 11 )
+
+[connection signal="pressed" from="PauseMenu/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="PauseMenu/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
+[connection signal="animation_finished" from="FadeIn/AnimationPlayer" to="FadeIn" method="_on_AnimationPlayer_animation_finished"]
