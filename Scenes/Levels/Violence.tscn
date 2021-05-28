@@ -1264,8 +1264,8 @@ position = Vector2( 791.682, 370.413 )
 scale = Vector2( 3, 1 )
 
 [node name="TeleportTrigger11" parent="." instance=ExtResource( 14 )]
-position = Vector2( 142.181, 378.89 )
-scale = Vector2( 3, 1 )
+position = Vector2( 183.5, 379.42 )
+scale = Vector2( 1.8, 1 )
 
 [node name="TeleportTrigger9" parent="." instance=ExtResource( 14 )]
 position = Vector2( 501.28, 227.105 )
