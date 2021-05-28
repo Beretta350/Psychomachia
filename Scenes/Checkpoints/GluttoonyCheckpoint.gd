@@ -9,7 +9,6 @@ func _ready():
 	add_to_group("checkpoints")
 	
 func _physics_process(delta):
-	print(cerberus,player)
 	if cerberus == null:
 		return
 	if player == null:
