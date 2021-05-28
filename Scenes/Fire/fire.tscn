@@ -24,11 +24,12 @@ script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="fire" type="CollisionShape2D" parent="."]
 position = Vector2( 1.25993, 12.2842 )
 shape = SubResource( 2 )
+
 [connection signal="area_entered" from="." to="." method="_on_Fire_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Fire_body_entered"]
