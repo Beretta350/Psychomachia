@@ -620,7 +620,7 @@ position = Vector2( 106.295, 295.201 )
 scale = Vector2( 1.17622, 1.25559 )
 frames = SubResource( 16 )
 animation = "sunburn"
-frame = 54
+frame = 24
 playing = true
 
 [node name="Light2D" type="Light2D" parent="AnimatedSprite"]

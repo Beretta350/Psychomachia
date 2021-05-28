@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Greed/TreasureEdited.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Levels/change_level.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Enimies/FireGhoul/FireGhoul.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Levels/greed_end.gd" type="Script" id=12]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -1087,6 +1088,9 @@ height = 160.677
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 900.623, 77.8425 )
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 27.5245, 494.521 )
+
 [node name="GreedTemplate" type="Node2D"]
 
 [node name="BaseTM" type="TileMap" parent="."]
@@ -1140,7 +1144,6 @@ mode = 3
 shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
@@ -1192,5 +1195,14 @@ position = Vector2( -1029.66, 236.982 )
 [node name="FireGhoulEnemy10" parent="." instance=ExtResource( 11 )]
 position = Vector2( -1080.57, 1396.64 )
 
+[node name="greed_end" type="Area2D" parent="."]
+position = Vector2( -1991.58, 1802.03 )
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="greed_end"]
+position = Vector2( -34.7058, -205.565 )
+shape = SubResource( 10 )
+
 [connection signal="body_entered" from="perdeclimb" to="perdeclimb" method="_on_perdeclimb_body_entered"]
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]
+[connection signal="body_entered" from="greed_end" to="greed_end" method="_on_greed_end_body_entered"]
