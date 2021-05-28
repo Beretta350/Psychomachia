@@ -1,0 +1,39 @@
+{
+	"events": [
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Huff... Hufff... Isso foi muito perigoso!"
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Aquele era o Cerberus... Li sobre ele em um livro. "
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ele quase nos pegou. Tô muito sem fôlego."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Não encontramos nada, que droga. "
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Só resta um caminho... precisamos descer, de novo."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622181994.json",
+		"name": "gluttony_end"
+	}
+}
