@@ -1,0 +1,39 @@
+{
+	"events": [
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Kiri... eu... matei tanto."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Era necessário, Lain, era a única maneira de alcançar o seu objetivo."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu não tenho nem mais certeza se isso vai funcionar. O meu corpo... tem algo acontecendo. Não me sinto mais a mesma. Não sei se consigo continuar."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Nós temos que continuar. Ei, lembra, eu tô aqui pra te ajudar."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No fim, é a nossa única opção... Seguir em frente."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622182843.json",
+		"name": "violence_end"
+	}
+}
