@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/heavy_attack.mp3-bf35b58e10a519ffa68380188d1d8703.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/player/heavy_attack.mp3"
+dest_files=[ "res://.import/heavy_attack.mp3-bf35b58e10a519ffa68380188d1d8703.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

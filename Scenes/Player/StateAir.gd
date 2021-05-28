@@ -23,11 +23,13 @@ func run(player: KinematicBody2D):
 	if player.underwater:
 		return "swim"
 	if player.is_on_floor():
+		player.grounded_sound.play()
 		return "idle" if player.horizontal == 0 else "walk"
-	if player.grounded and player.jumping and (scene_name!="ViolenceTemplate" && scene_name!="FraudTemplate" && scene_name!="TreacheryTemplate"):
+	if player.grounded and player.jumping:
 		player.jumps = 0
 		return "jump"
-	if player.jumps < 1 and player.jumping:
+	if player.jumps < 1 and player.jumping and (scene_name!="ViolenceTemplate" && scene_name!="FraudTemplate" && scene_name!="TreacheryTemplate"):
+		player.jump_sound.play()
 		player.jumps += 1
 		return "jump"
 	if player.attacking:

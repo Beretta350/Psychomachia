@@ -11,5 +11,5 @@ dest_files=[ "res://.import/fire_breath.mp3-d2c70de71bd0ca8ffff6119798255077.mp3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

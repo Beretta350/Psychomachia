@@ -10,6 +10,7 @@ var life = 100
 
 onready var attack_timer = $Timers/AttackTimer
 onready var animations = $Body/Animation/AnimationPlayer
+onready var hit_sound = $Body/Animation/Hit
 onready var object_body = $Body
 
 var player = null
@@ -52,9 +53,11 @@ func set_player(p):
 
 func _on_HurtArea_area_entered(area):
 	if "PlayerLightDamage" in area.name:
+		hit_sound.play()
 		life -= 20
 	elif "PlayerHeavyDamage" in area.name:
 		life -= 30
+		hit_sound.play()
 		
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "death":

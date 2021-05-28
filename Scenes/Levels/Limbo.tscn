@@ -1487,7 +1487,7 @@ centered = false
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -24.0
+volume_db = -20.0
 autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]

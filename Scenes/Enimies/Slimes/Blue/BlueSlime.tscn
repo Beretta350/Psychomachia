@@ -209,6 +209,42 @@ tracks/9/keys = {
 "update": 1,
 "values": [ false, false ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Attack:stream")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 51 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Death:stream")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 50 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../Jump:stream")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 49 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 length = 1.1
@@ -602,7 +638,6 @@ one_shot = true
 
 [node name="HitDamageCollisionShape" type="CollisionPolygon2D" parent="Body/HitDamageArea"]
 polygon = PoolVector2Array( 9.36349, -3.82113, -23.3767, -3.82113, -23.3767, 18.4025, -11.2727, 18.4025, -11.2727, 5.10801, 9.36349, 4.90958 )
-disabled = true
 
 [node name="HitArea" type="Area2D" parent="Body"]
 z_as_relative = false
@@ -611,6 +646,7 @@ z_as_relative = false
 position = Vector2( -17.811, 6.7027 )
 z_as_relative = false
 shape = SubResource( 2 )
+disabled = true
 
 [node name="HurtArea" type="Area2D" parent="Body"]
 
@@ -622,7 +658,8 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Animation"]
 frames = SubResource( 4 )
-animation = "idle"
+animation = "attack"
+frame = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Animation"]
 root_node = NodePath("../AnimatedSprite")

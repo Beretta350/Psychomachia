@@ -1176,7 +1176,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 5
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
@@ -1185,7 +1185,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 4
+frame = 1
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
@@ -1194,7 +1194,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 4
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
@@ -1203,7 +1203,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 4
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -1212,7 +1212,6 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
@@ -1221,7 +1220,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 2
+frame = 5
 playing = true
 
 [node name="Decorative TM" type="TileMap" parent="."]
@@ -1253,7 +1252,7 @@ limit_bottom = 450
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = -24.0
+volume_db = -20.0
 autoplay = true
 
 [node name="TeleportTrigger" parent="." instance=ExtResource( 14 )]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Scenes/Boss/FireDemon/FireDemon.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Boss/Fire-Demon/attack/tile009.png" type="Texture" id=2]
@@ -56,6 +56,12 @@
 [ext_resource path="res://Sprites/Boss/Fire-Demon/death/tile029.png" type="Texture" id=54]
 [ext_resource path="res://Sprites/Boss/Fire-Demon/death/tile025.png" type="Texture" id=55]
 [ext_resource path="res://Sprites/Boss/Fire-Demon/death/tile028.png" type="Texture" id=56]
+[ext_resource path="res://Sounds/Effects/fire_demon/flap_wings.mp3" type="AudioStream" id=57]
+[ext_resource path="res://Sounds/Effects/fire_demon/death.mp3" type="AudioStream" id=58]
+[ext_resource path="res://Sounds/Effects/fire_demon/fire_breath.mp3" type="AudioStream" id=59]
+[ext_resource path="res://Sounds/Effects/fire_demon/hit.mp3" type="AudioStream" id=60]
+[ext_resource path="res://Sounds/Effects/fire_demon/death_explosion.mp3" type="AudioStream" id=61]
+[ext_resource path="res://Sounds/Effects/fire_demon/start_fight.mp3" type="AudioStream" id=62]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 26.8648, 36.315 )
@@ -76,14 +82,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 4 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 52 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 55 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 56 ), ExtResource( 54 ) ],
-"loop": true,
-"name": "death",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 22 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 8 ), ExtResource( 19 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 4 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 52 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 55 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 56 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "death",
 "speed": 5.0
 } ]
 
@@ -161,6 +167,30 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../FireBreath:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.5, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../FireBreath:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 59 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -250,6 +280,54 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true, true ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("../DeathScream:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../DeathExplosion:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../DeathScream:stream")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 58 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../DeathExplosion:stream")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 61 ) ]
+}
 
 [sub_resource type="Animation" id=8]
 length = 0.6
@@ -326,6 +404,30 @@ tracks/5/keys = {
 "update": 1,
 "values": [ false, false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("../FlapWings:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 57 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../FlapWings:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="FireDemonEnemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -365,14 +467,33 @@ shape = SubResource( 4 )
 [node name="Animation" type="Node2D" parent="Body"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Animation"]
+position = Vector2( 32, 20 )
 frames = SubResource( 5 )
-animation = "attack"
+animation = "idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Animation"]
 root_node = NodePath("../AnimatedSprite")
 anims/attack = SubResource( 6 )
 anims/death = SubResource( 7 )
 anims/idle = SubResource( 8 )
+
+[node name="DeathScream" type="AudioStreamPlayer2D" parent="Body/Animation"]
+stream = ExtResource( 58 )
+
+[node name="StartFight" type="AudioStreamPlayer2D" parent="Body/Animation"]
+stream = ExtResource( 62 )
+
+[node name="FireBreath" type="AudioStreamPlayer2D" parent="Body/Animation"]
+stream = ExtResource( 59 )
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="Body/Animation"]
+stream = ExtResource( 60 )
+
+[node name="DeathExplosion" type="AudioStreamPlayer2D" parent="Body/Animation"]
+stream = ExtResource( 61 )
+
+[node name="FlapWings" type="AudioStreamPlayer2D" parent="Body/Animation"]
+stream = ExtResource( 57 )
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 1.1

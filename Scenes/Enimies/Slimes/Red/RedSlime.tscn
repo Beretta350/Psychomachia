@@ -69,6 +69,11 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 47 ), ExtResource( 12 ), ExtResource( 38 ), ExtResource( 36 ), ExtResource( 5 ), ExtResource( 39 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 20 ), ExtResource( 34 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "attack",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 21 ), ExtResource( 3 ), ExtResource( 45 ), ExtResource( 8 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 46 ) ],
 "loop": false,
 "name": "death",
@@ -77,11 +82,6 @@ animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 35 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 29 ), ExtResource( 7 ), ExtResource( 28 ), ExtResource( 16 ), ExtResource( 24 ), ExtResource( 11 ), ExtResource( 43 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 31 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 37 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "jump",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 12 ), ExtResource( 38 ), ExtResource( 36 ), ExtResource( 5 ), ExtResource( 39 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 20 ), ExtResource( 34 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "attack",
 "speed": 10.0
 } ]
 
@@ -208,6 +208,42 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Jump:stream")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 50 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Attack:stream")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 52 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../Death:stream")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 51 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -575,6 +611,7 @@ z_as_relative = false
 position = Vector2( -17.8966, 6.65158 )
 z_as_relative = false
 shape = SubResource( 2 )
+disabled = true
 
 [node name="HurtArea" type="Area2D" parent="Body"]
 
@@ -586,7 +623,7 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Animation"]
 frames = SubResource( 4 )
-animation = "idle"
+animation = "attack"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Animation"]
 root_node = NodePath("../AnimatedSprite")
@@ -609,6 +646,7 @@ max_distance = 500.0
 
 [node name="Death" type="AudioStreamPlayer2D" parent="Body/Animation"]
 stream = ExtResource( 51 )
+volume_db = -12.0
 max_distance = 500.0
 
 [connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_AttackTimer_timeout"]

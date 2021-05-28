@@ -1143,7 +1143,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -24.0
+volume_db = -20.0
 autoplay = true
 
 [node name="perdeclimb" type="Area2D" parent="."]

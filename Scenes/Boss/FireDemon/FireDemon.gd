@@ -6,10 +6,12 @@ var vec_to_pos = Vector2()
 var pos = 0
 var attacking = false
 var triggered = false
+var start_fight = false
 
 onready var animations : AnimationPlayer = $Body/Animation/AnimationPlayer
 onready var object_body : Node2D = $Body
-
+onready var hit_sound = $Body/Animation/Hit
+onready var start_sound = $Body/Animation/StartFight
 onready var attackTimer : Timer = $AttackTimer
 
 const pos_0 = Vector2(236,391)
@@ -23,8 +25,6 @@ func _ready():
 	add_to_group("enemies") 
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("fire_demon_triggers", "set_fire_demon", self)
-	
-	animations.play("iddle")
 
 func _physics_process(delta):
 	if life <= 0:
@@ -32,6 +32,10 @@ func _physics_process(delta):
 	else:
 		if triggered == false:
 			return
+		
+		if not start_fight:
+			start_fight = true
+			start_sound.play()
 		
 		if attackTimer.is_stopped():
 			attacking = false
@@ -76,8 +80,10 @@ func _physics_process(delta):
 
 func _on_HurtArea_area_entered(area):
 	if "PlayerLightDamage" in area.name:
+		hit_sound.play()
 		life -= 4
 	elif "PlayerHeavyDamage" in area.name:
+		hit_sound.play()
 		life -= 5
 
 func _on_AnimationPlayer_animation_finished(anim_name):

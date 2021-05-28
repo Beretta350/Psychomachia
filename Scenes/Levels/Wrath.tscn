@@ -202,7 +202,7 @@ position = Vector2( 2511.04, 499.817 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -24.0
+volume_db = -20.0
 autoplay = true
 
 [node name="Next_Scene" type="Area2D" parent="."]

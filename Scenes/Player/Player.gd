@@ -23,7 +23,6 @@ var ladder_x : float
 var jumps : int = 0
 var bow_atk : bool = false
 var bow_equip : bool = false
-var slide : bool = false
 var heal : bool = false
 var climbing : bool = false
 var dashing : bool = false
@@ -52,6 +51,8 @@ onready var tween : Tween = $Tween
 onready var waves : Particles2D = $Waves
 onready var invecible_timer = $Timers/InvencibleTimer
 onready var healing_timer = $Timers/HealingTimer
+onready var grounded_sound : AudioStreamPlayer2D = $AnimatedSprite/FloorHit
+onready var jump_sound : AudioStreamPlayer2D = $AnimatedSprite/Jump
 export onready var scene_name=get_tree().get_current_scene().get_name()
 
 func _ready():
@@ -121,13 +122,8 @@ func update_inputs():
 		h_attacking=false
 		attacking=false
 		bow_atk=false
-			
-	if(Input.is_action_pressed("slide")):
-		slide=true
-	else:
-		slide=false
 		
-	if(Input.is_action_pressed("heal") && healing_timer.is_stopped() &&(scene_name=="LimboTemplate" || scene_name=="LustTemplate" || scene_name=="GluttonyTemplate" || scene_name=="Greed")):
+	if(Input.is_action_pressed("heal") && healing_timer.is_stopped() &&(scene_name=="LimboTemplate" || scene_name=="LustTemplate" || scene_name=="GluttonyTemplate" || scene_name=="GreedTemplate")):
 		if life < 100:
 			heal = true
 			life += 20

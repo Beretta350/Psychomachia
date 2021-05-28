@@ -23,18 +23,13 @@ func run(player: KinematicBody2D):
 	if player.jumping:
 		return "jump"
 	if player.horizontal != 0:
-		if !player.slide:
-			return "walk"
-		else: 
-			return "slide"
+		return "walk"
 	if player.attacking:
 		return "light_atk"
 	if player.h_attacking:
 		return "heavy_atk"
 	if player.bow_atk:
 		return "bow_atk"
-	if player.slide:
-		return "slide"
 	if player.heal:
 		return "heal"
 	if player.climbing:
