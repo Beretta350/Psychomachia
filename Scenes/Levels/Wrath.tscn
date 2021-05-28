@@ -220,7 +220,7 @@ script = ExtResource( 11 )
 position = Vector2( 4.24268, -9.89951 )
 shape = SubResource( 9 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 12 )]
+[node name="Companion" parent="." instance=ExtResource( 12 )]
 position = Vector2( 2695.53, 392.299 )
 
 [connection signal="body_entered" from="LavaLake" to="Player" method="_on_LavaLake_body_entered"]

@@ -14,7 +14,6 @@ func _ready():
 	var level_file = File.new()
 	
 	if !level_file.file_exists("save/max_level.dat"):
-		print("creating file")
 		level_file.open("save/max_level.dat", File.WRITE)
 		level_file.store_8(level_reached)
 		level_file.close()

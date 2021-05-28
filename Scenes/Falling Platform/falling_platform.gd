@@ -31,7 +31,6 @@ func collide_with(collision: KinematicCollision2D, collider: KinematicBody2D):
 		
 		
 func _on_AnimationPlayer_animation_finished(anim_name):
-	print("passou aqui")
 	set_physics_process(true)
 	timer.start(reset_time)
 

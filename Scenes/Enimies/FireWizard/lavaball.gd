@@ -2,10 +2,6 @@ extends KinematicBody2D
 
 const MOVE_SPEED = 200
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var player = null
 
 onready var lifetimeTimer : Timer = $Lifetime
@@ -13,7 +9,6 @@ onready var explosionTimer : Timer = $ExplosionTimer
 
 var exploding = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("enemies") # Replace with function body.
 	
@@ -32,20 +27,14 @@ func _physics_process(delta):
 	if exploding == true and explosionTimer.is_stopped():
 		self.kill()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func kill():
 	queue_free()
 
 func set_player(p):
 	player = p
 
-
 func _on_HitDamage_body_entered(body):
-	if body.name != 'KinematicBody2D':
+	if not "LabaBall" in body.name and not "FireWizard" in body.name:
 		if exploding == false:
 			exploding = true
 			explosionTimer.start()

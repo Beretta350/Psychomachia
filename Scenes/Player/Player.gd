@@ -80,7 +80,6 @@ func update_inputs():
 	
 	get_wall()
 	is_on_wall=test_move(transform, direction)
-#	print(is_on_wall)
 	if(Input.is_action_just_pressed("sword")):
 		bow_equip = false
 	
