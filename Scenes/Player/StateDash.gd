@@ -2,6 +2,8 @@ extends BasePlayerState
 
 export var dash_speed: float = 5000
 
+func run(player: KinematicBody2D):
+
 	if !player.sprite.flip_h:
 		player.vx = -dash_speed
 	else:

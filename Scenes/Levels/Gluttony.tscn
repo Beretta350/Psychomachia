@@ -315,7 +315,7 @@ cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1700.72, 488.567 )
+position = Vector2( 1976.9, -62.0085 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -50, -30 )
