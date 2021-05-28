@@ -11,8 +11,11 @@ var life = 100
 onready var attack_timer = $Timers/AttackTimer
 onready var animations = $Body/Animation/AnimationPlayer
 onready var object_body = $Body
+onready var lavaBallCD : Timer = $Timers/LavaBallCD
 
 var player = null
+
+var plLavaball := preload("res://Scenes/Enimies/FireWizard/lavaball.tscn")
 
 func _ready():
 	add_to_group("enemies") # Replace with function body.
@@ -43,6 +46,14 @@ func _physics_process(delta):
 			velocity.x = SPEED * direction
 					
 			animations.play("walk")
+			
+			if player.global_position.y < 348 and lavaBallCD.is_stopped():
+				if player.global_position.x > 680 and player.global_position.x < 837 or player.global_position.x > 166 and player.global_position.x < 320:
+					var lavaball := plLavaball.instance()
+					lavaball.position = position + Vector2(30*direction,-30)
+					lavaball.player = player
+					get_tree().current_scene.add_child(lavaball)
+					lavaBallCD.start()
 		
 		velocity += Vector2.DOWN * GRAVITY
 		

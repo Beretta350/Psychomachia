@@ -61,14 +61,14 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 25 ), ExtResource( 32 ), ExtResource( 26 ), ExtResource( 40 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 39 ) ],
-"loop": false,
-"name": "death",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 16 ), ExtResource( 20 ), ExtResource( 3 ), ExtResource( 18 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 25 ), ExtResource( 32 ), ExtResource( 26 ), ExtResource( 40 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 39 ) ],
+"loop": false,
+"name": "death",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 27 ), ExtResource( 34 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 28 ), ExtResource( 29 ) ],
@@ -438,6 +438,10 @@ shape = SubResource( 1 )
 
 [node name="AttackTimer" type="Timer" parent="Timers"]
 wait_time = 0.7
+one_shot = true
+
+[node name="LavaBallCD" type="Timer" parent="Timers"]
+wait_time = 3.0
 one_shot = true
 
 [node name="Body" type="Node2D" parent="."]
