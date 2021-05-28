@@ -41,7 +41,6 @@ func kill():
 
 func _on_HitDamage_body_entered(body):
 	if invincible_timer.is_stopped():
-		print('explodir')
 		if exploding == false:
 			exploding = true
 			explosionTimer.start()
