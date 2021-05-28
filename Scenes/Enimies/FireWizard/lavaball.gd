@@ -34,7 +34,6 @@ func set_player(p):
 	player = p
 
 func _on_HitDamage_body_entered(body):
-	print(body.name)
 	if not "LabaBall" in body.name and not "FireWizard" in body.name:
 		if exploding == false:
 			exploding = true
