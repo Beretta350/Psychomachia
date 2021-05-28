@@ -2286,7 +2286,7 @@ script = ExtResource( 17 )
 position = Vector2( -60.928, -80.8972 )
 shape = SubResource( 123 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 18 )]
+[node name="Companion" parent="." instance=ExtResource( 18 )]
 position = Vector2( 1875.81, 426.733 )
 
 [connection signal="splash" from="Water&Splash 3/Water3" to="Water&Splash/Splash" method="splash"]
