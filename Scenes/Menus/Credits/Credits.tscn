@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/AngerStyles-ywXKY.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Menus/Main/FadeIn.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Menus/Credits/Credits.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Credits" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Devs" type="Label" parent="."]
+margin_left = 444.036
+margin_top = 75.2257
+margin_right = 587.036
+margin_bottom = 203.226
+custom_fonts/font = SubResource( 1 )
+text = "Fim"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fim" type="Label" parent="."]
+margin_left = 383.807
+margin_top = 262.714
+margin_right = 656.807
+margin_bottom = 553.714
+custom_fonts/font = SubResource( 2 )
+text = "Um jogo por:
+
+Bruna da Cruz Chiochetta
+
+Gabriel Moreira Beretta
+
+Paulo Gamarra Lessa Pinto"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeIn" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 992.0
+margin_bottom = 570.0
+color = Color( 0, 0, 0, 0 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeIn"]
+anims/fade_in = SubResource( 3 )
+
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
+[connection signal="animation_finished" from="FadeIn/AnimationPlayer" to="FadeIn" method="_on_AnimationPlayer_animation_finished"]
