@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Treachery/Background 2.png" type="Texture" id=2]
@@ -70,6 +70,14 @@
 [ext_resource path="res://Sprites/Light/light_small.png" type="Texture" id=68]
 [ext_resource path="res://Sounds/Levels/treachery.mp3" type="AudioStream" id=69]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=70]
+[ext_resource path="res://Scenes/Levels/perdearco.gd" type="Script" id=71]
+[ext_resource path="res://Scenes/Levels/whereiskiri.gd" type="Script" id=72]
+[ext_resource path="res://Scenes/Levels/ithurts.gd" type="Script" id=73]
+[ext_resource path="res://Scenes/Levels/wheretogo.gd" type="Script" id=74]
+[ext_resource path="res://Scenes/Levels/meio.gd" type="Script" id=75]
+[ext_resource path="res://Scenes/Levels/end_dialog.gd" type="Script" id=76]
+[ext_resource path="res://Scenes/Levels/Light2D.gd" type="Script" id=77]
+[ext_resource path="res://Scenes/Menus/Main/FadeIn.gd" type="Script" id=78]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
@@ -480,7 +488,22 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="Animation" id=17]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="ParticlesMaterial" id=18]
 emission_shape = 2
 emission_box_extents = Vector3( 1, 3500, 1 )
 flag_disable_z = true
@@ -490,6 +513,24 @@ initial_velocity = 200.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 0.3
+
+[sub_resource type="CapsuleShape2D" id=19]
+height = 673.806
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 10, 449.805 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 14.6919, 369.385 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 10, 374.16 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 10.5903, 352.895 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 10, 444.095 )
 
 [node name="TreacheryTemplate" type="Node2D"]
 
@@ -575,17 +616,34 @@ centered = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 82.4842, 322.981 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 106.295, 295.201 )
+scale = Vector2( 1.17622, 1.25559 )
 frames = SubResource( 16 )
 animation = "sunburn"
-frame = 51
+frame = 54
 playing = true
 
 [node name="Light2D" type="Light2D" parent="AnimatedSprite"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 68 )
 range_layer_min = -100
+script = ExtResource( 77 )
+
+[node name="FadeIn" type="ColorRect" parent="AnimatedSprite/Light2D"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -30.1234
+margin_top = -78.3699
+margin_right = -30.1234
+margin_bottom = -78.3699
+color = Color( 0, 0, 0, 0 )
+script = ExtResource( 78 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite/Light2D/FadeIn"]
+anims/fade_in = SubResource( 17 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
@@ -597,9 +655,64 @@ z_index = 2
 amount = 8000
 lifetime = 3.0
 visibility_rect = Rect2( 0, -3500, 1000, 6550 )
-process_material = SubResource( 17 )
+process_material = SubResource( 18 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 69 )
 volume_db = -24.0
 autoplay = true
+
+[node name="perdearco" type="Area2D" parent="."]
+position = Vector2( 5854.49, 242.931 )
+script = ExtResource( 71 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="perdearco"]
+position = Vector2( 2.66992, -16.0181 )
+shape = SubResource( 19 )
+
+[node name="whereiskiri" type="Area2D" parent="."]
+position = Vector2( 5556.49, 252.985 )
+script = ExtResource( 72 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="whereiskiri"]
+position = Vector2( 128.435, -4.75684 )
+shape = SubResource( 20 )
+
+[node name="ithurts" type="Area2D" parent="."]
+position = Vector2( 5527.57, 187.762 )
+script = ExtResource( 73 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ithurts"]
+position = Vector2( 16.9512, 16.9515 )
+shape = SubResource( 21 )
+
+[node name="wheretogo" type="Area2D" parent="."]
+position = Vector2( 5111.26, 210.749 )
+script = ExtResource( 74 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wheretogo"]
+shape = SubResource( 22 )
+
+[node name="meio" type="Area2D" parent="."]
+position = Vector2( 3432.81, 189.449 )
+script = ExtResource( 75 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="meio"]
+shape = SubResource( 23 )
+
+[node name="end_dialog" type="Area2D" parent="."]
+position = Vector2( 302.906, 310.033 )
+script = ExtResource( 76 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end_dialog"]
+position = Vector2( 0, -5.33936 )
+shape = SubResource( 24 )
+
+[connection signal="fade_finished" from="AnimatedSprite/Light2D/FadeIn" to="AnimatedSprite/Light2D" method="_on_FadeIn_fade_finished"]
+[connection signal="animation_finished" from="AnimatedSprite/Light2D/FadeIn/AnimationPlayer" to="AnimatedSprite/Light2D/FadeIn" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="perdearco" to="perdearco" method="_on_perdearco_body_entered"]
+[connection signal="body_entered" from="whereiskiri" to="whereiskiri" method="_on_whereiskiri_body_entered"]
+[connection signal="body_entered" from="ithurts" to="ithurts" method="_on_ithurts_body_entered"]
+[connection signal="body_entered" from="wheretogo" to="wheretogo" method="_on_wheretogo_body_entered"]
+[connection signal="body_entered" from="meio" to="meio" method="_on_meio_body_entered"]
+[connection signal="body_entered" from="end_dialog" to="end_dialog" method="_on_end_dialog_body_entered"]

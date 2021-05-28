@@ -1,0 +1,21 @@
+{
+	"events": [
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ugh... Aqui é só gelo pra todo lado..."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Não posso voltar, e não a encontro... Só posso continuar seguindo em frente."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622166381.json",
+		"name": "meio"
+	}
+}

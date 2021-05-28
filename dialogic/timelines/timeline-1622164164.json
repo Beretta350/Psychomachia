@@ -1,0 +1,163 @@
+{
+	"events": [
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Kiri!!! Finalmente... Achei que tinha perdido você. Precisamos voltar, não há nada aqui."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": ". . ."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Kiri?"
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Não me chame mais por esse nome, humana tola."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Agora que chegamos aqui, você pode saber minha verdadeira identidade. Eu sou Lúcifer, o príncipe do Inferno."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Com a sua ajuda, eu finalmente cheguei até o local onde meu corpo caiu."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Então é você... Que o demônio me alertou."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Por favor, me ajude a encontrá-la. Eu faço qualquer coisa."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Por todo esse tempo ouvi você falando mãe, mãe, mãe... Lain, você não sabe se morreu jovem, se morreu adulta, se sequer teve uma mãe. Isso é somente um sentimento."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Com você, Lain, finalmente pude entender o que motiva um humano, o que faz de vocês tão persistentes, tão irritantes, tão difíceis de quebrar."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Vocês chegam aqui com quase nenhuma memória, se agarrando em um sentimento que nada mais é do que uma lembrança vaga da sua vida anterior."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "E ele é tão forte e dominante que pude usá-lo para te trazer até aqui, o lugar no qual perdi meu corpo."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Demorei milênios para encontrar um humano virtuoso como você no Limbo. E juntos nós derrotamos todos os príncipes do Inferno, e chegamos até aqui. "
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Cada uma das suas virtudes, você abandonou, decidindo descer até aqui."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A sua fé no sistema, ao decidir abandonar o Limbo."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A sua temperância, ao se envolver com a Luxúria."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A sua paciência, ao sucumbir à Ira."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A sua humildade, ao perder-se no labirinto da Ganância."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A sua razão, ao ceder aos impulsos da Violência."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A sua pureza, ao cair na tentação da Fraude."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "E por fim você está aqui, comigo, traindo a humanidade."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu confiei em você..."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Com a sua alma, o seu poder, era a única maneira de chegar até aqui."
+		},
+		{
+			"character": "character-1622168960.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você está sentindo isso? É o meu corpo... Ele está vindo até nós..."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você sente um calafrio e uma onda de determinação. Sua única certeza é que você só pode seguir em frente."
+		},
+		{
+			"event_id": "dialogic_023",
+			"wait_seconds": 2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622164164.json",
+		"name": "end_dialog"
+	}
+}

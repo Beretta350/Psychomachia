@@ -71,7 +71,7 @@ func _on_Save3_pressed():
 
 
 func _on_Save4_pressed():
-	scene_to_load = "res://Scenes/Levels/Heresy.tscn"
+	scene_to_load = "res://Scenes/Levels/Wrath.tscn"
 	$FadeIn.show()
 	$FadeIn.fade_in()
 	

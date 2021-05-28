@@ -4,36 +4,30 @@
 			"character": "character-1621534584.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Eu não enxergo nada... Me sinto tão fraca..."
+			"text": "Eu não vejo nada... Não sei pra onde ir..."
 		},
 		{
 			"character": "character-1621534584.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Kiri, onde você tá?"
+			"text": "MÃAAAAAAAAAEEEEEE!!!"
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "MÃE, VOCÊ TÁ AÍ?"
 		},
 		{
 			"character": "character-1621534584.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "..."
-		},
-		{
-			"character": "character-1621534584.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "KIRI!!!!!"
-		},
-		{
-			"character": "character-1621534584.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Ugh... meu corpo dói muito."
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.2",
-		"file": "timeline-1622083404.json",
-		"name": "ithurts"
+		"file": "timeline-1622163009.json",
+		"name": "wheretogo"
 	}
 }
