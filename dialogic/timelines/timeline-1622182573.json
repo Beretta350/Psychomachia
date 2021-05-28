@@ -1,0 +1,39 @@
+{
+	"events": [
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Que travessia intensa..."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ugh... não aguento mais. Tô muito cansada."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu sei, Lain. Sinto muito."
+		},
+		{
+			"character": "character-1621534593.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Não tem nada aqui, precisamos seguir em frente."
+		},
+		{
+			"character": "character-1621534584.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eu sinto tanta falta dela. Só por isso eu sigo em frente."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1622182573.json",
+		"name": "wrath_end"
+	}
+}
