@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/Projectiles/lavaball/fireball3.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Projectiles/lavaball/fireball1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Projectiles/lavaball/fireball2.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Enimies/Bat/BatProjectile.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 9.93279
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 10.5682
+
+[node name="BatFireball" type="KinematicBody2D"]
+scale = Vector2( 0.75, 0.75 )
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="BatFireballCS" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="ExplosionTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="HitDamage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDamage"]
+shape = SubResource( 3 )
+
+[node name="InvincibleTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="HitDamage" to="." method="_on_HitDamage_body_entered"]
