@@ -15,14 +15,14 @@ var  going_down : bool = false
 
 
 func _ready():
-	pass
+	yield(get_tree(), "idle_frame")
+	get_tree().call_group("enemies", "set_skiff", self)
 
 func _physics_process(delta):
 	move_and_slide(velocity, Vector2.UP, true)
 	self.transform.origin.y = 0
 	for i in range(get_slide_count()):
 		var collision = get_slide_collision(i)
-		print(get_slide_collision(i).collider.get_name())
 		if(get_slide_collision(i).collider.get_name().find("Player") != -1):
 			velocity = Vector2(-50,0)
 			collision.collider.move_and_slide(velocity, Vector2.UP, true)
