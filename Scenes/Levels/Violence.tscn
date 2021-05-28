@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Violence/bloodmoon.jpg" type="Texture" id=2]
@@ -21,6 +21,9 @@
 [ext_resource path="res://Scenes/Boss/NightBorne/ArenaWalls.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Levels/PerdeDJ.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Enimies/Companion/Companion.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Enimies/Slimes/Red/RedSlime.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Enimies/FireGhoul/FireGhoul.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Enimies/FireWizard/FireWizard.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1176,7 +1179,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
@@ -1185,7 +1188,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
@@ -1194,7 +1197,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
@@ -1203,7 +1206,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -1212,6 +1215,7 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
@@ -1220,7 +1224,6 @@ scale = Vector2( 1.5, 0.8 )
 z_index = -1
 frames = SubResource( 56 )
 animation = "fire"
-frame = 5
 playing = true
 
 [node name="Decorative TM" type="TileMap" parent="."]
@@ -1327,6 +1330,21 @@ shape = SubResource( 60 )
 
 [node name="Companion" parent="." instance=ExtResource( 21 )]
 position = Vector2( 953.075, 308.348 )
+
+[node name="RedSlimeEnemy" parent="." instance=ExtResource( 22 )]
+position = Vector2( 359.494, 368.014 )
+
+[node name="RedSlimeEnemy2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 636.681, 365.017 )
+
+[node name="FireWizardEnemy" parent="." instance=ExtResource( 24 )]
+position = Vector2( 165.788, 62.4315 )
+
+[node name="FireWizardEnemy2" parent="." instance=ExtResource( 24 )]
+position = Vector2( 851.261, 62.4315 )
+
+[node name="FireGhoulEnemy" parent="." instance=ExtResource( 23 )]
+position = Vector2( 510.762, 350.753 )
 
 [connection signal="body_entered" from="Next_Scene" to="Next_Scene/CollisionShape2D" method="_on_Next_Scene_body_entered"]
 [connection signal="body_entered" from="PerdeDJ" to="PerdeDJ" method="_on_PerdeDJ_body_entered"]

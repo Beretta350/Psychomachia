@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Scenario/Heresy/Background.png" type="Texture" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Scenes/Boss/FireDemon/InvisibleWall.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Levels/PerdeAtkForte.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Enimies/Companion/Companion.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Enimies/FireGhoul/FireGhoul.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Enimies/Slimes/Red/RedSlime.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Enimies/FireWizard/FireWizard.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -919,7 +922,7 @@ tile_data = PoolIntArray( 852112, 5, 0, 983125, 3, 0, 1310880, 6, 0, 1573008, 4,
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 392, 22 )
+position = Vector2( 2797.44, 107.623 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -50, -30 )
@@ -1020,6 +1023,33 @@ shape = SubResource( 47 )
 
 [node name="Companion" parent="." instance=ExtResource( 14 )]
 position = Vector2( 2680.44, 341.229 )
+
+[node name="FireGhoulEnemy" parent="." instance=ExtResource( 15 )]
+position = Vector2( 252.189, 405.591 )
+
+[node name="RedSlimeEnemy" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1305.83, 524.511 )
+
+[node name="RedSlimeEnemy2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1163.12, 510.241 )
+
+[node name="FireWizardEnemy" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1372.42, 222.453 )
+
+[node name="FireWizardEnemy2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2462.41, 192.021 )
+
+[node name="RedSlimeEnemy3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2464.11, 481.7 )
+
+[node name="RedSlimeEnemy4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2340.44, 182.02 )
+
+[node name="FireWizardEnemy3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 518.571, 369.914 )
+
+[node name="FireWizardEnemy4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 787.332, 143.965 )
 
 [connection signal="body_entered" from="LavaLake" to="Player" method="_on_LavaLake_body_entered"]
 [connection signal="body_entered" from="LavaLake2" to="Player" method="_on_LavaLake2_body_entered"]

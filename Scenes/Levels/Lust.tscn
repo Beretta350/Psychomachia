@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=145 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/NPCs/Minos/Minos.tscn" type="PackedScene" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://Sprites/Scenario/Lust/objects.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Levels/lustintro.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Enimies/Companion/Companion.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Enimies/FireWizard/FireWizard.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Enimies/FireGhoul/FireGhoul.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Enimies/Slimes/Red/RedSlime.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -2288,6 +2291,27 @@ shape = SubResource( 123 )
 
 [node name="Companion" parent="." instance=ExtResource( 18 )]
 position = Vector2( 1875.81, 426.733 )
+
+[node name="RedSlimeEnemy" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1250.61, 278.412 )
+
+[node name="RedSlimeEnemy2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1390.3, 268.888 )
+
+[node name="RedSlimeEnemy3" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1506.18, 267.3 )
+
+[node name="FireWizardEnemy" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1703.02, 145.071 )
+
+[node name="FireWizardEnemy2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1382.36, 173.644 )
+
+[node name="FireGhoulEnemy" parent="." instance=ExtResource( 20 )]
+position = Vector2( 877.569, 424.453 )
+
+[node name="FireWizardEnemy3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1458.56, 426.04 )
 
 [connection signal="splash" from="Water&Splash 3/Water3" to="Water&Splash/Splash" method="splash"]
 [connection signal="splash" from="Water&Splash/Water" to="Water&Splash/Splash" method="splash"]
